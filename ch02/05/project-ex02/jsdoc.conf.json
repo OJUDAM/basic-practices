@@ -1,0 +1,23 @@
+{
+    "plugins": [],
+    "recurseDepth": 10,
+    "source": {
+		"include": ["README.md", "src", "libs"],
+        "exclude": ["src/ex01.js"],      
+        "includePattern": ".+\\.js(doc|x)?$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "sourceType": "module",
+    "opts": {
+        "template": "template/default",
+        "encoding": "utf8",                       
+        "destination": "htdocs",
+        "recurse": true
+    },
+    "tags": {
+        "allowUnknownTags": true,
+        "dictionaries": ["jsdoc","closure"]
+    },
+    "templates": {
+    }
+}

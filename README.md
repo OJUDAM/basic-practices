@@ -3,15 +3,15 @@
 [<br/>
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-{ "[ch01](https://github.com/kickscar/javascript-practices/tree/master/ch01)": "[소개 (About JavaScript)](https://github.com/kickscar/javascript-practices/tree/master/ch01)" },
+{ "[ch01](https://github.com/kickscar-javascript/basic-practices/tree/master/ch01)": "[소개 (About JavaScript)](https://github.com/kickscar-javascript/basic-practices/tree/master/ch01)" },
 <br/>
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-{ "[ch02](https://github.com/kickscar/javascript-practices/tree/master/ch02)": "[개발도구와 개발환경 (Development Tools & Environment)](https://github.com/kickscar/javascript-practices/tree/master/ch02)" },
+{ "[ch02](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02)": "[개발도구와 개발환경 (Development Tools & Environment)](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02)" },
 <br/>
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-{ "[ch03](https://github.com/kickscar/javascript-practices/tree/master/ch03)": "[기본타입과 객체 (Primitive Type & Object)](https://github.com/kickscar/javascript-practices/tree/master/ch03)" },
+{ "[ch03](https://github.com/kickscar-javascript/basic-practices/tree/master/ch03)": "[기본타입과 객체 (Primitive Type & Object)](https://github.com/kickscar-javascript/basic-practices/tree/master/ch03)" },
 <br/>
 
 &nbsp;&nbsp;&nbsp;&nbsp;

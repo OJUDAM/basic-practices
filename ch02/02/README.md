@@ -1,4 +1,4 @@
-## [JavaScript Practices](https://github.com/kickscar/javascript-practices) / [ch02](https://github.com/kickscar/javascript-practices/tree/master/ch02) / 02. ESLint : 코드 품질 검증 도구
+## [JavaScript Practices](https://github.com/kickscar-javascript/basic-practices) / [ch02](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02) / 02. ESLint : 코드 품질 검증 도구
 
 ### 1. 소개
 
@@ -132,7 +132,7 @@
    ```
 
    + ESLint를 직접 실행하였다.
-   + VSCode, WebStorm과 같은 IDE에서 통합하여 사용할 수도 있고 Grunt, Gulp와 같은 태스크 자동화 도구의 파이프 연결을 통해 사용할 수도 있다. ([ch02/06. Grunt & Gulp : 태스크 자동화 도구 참고](https://github.com/kickscar/javascript-practices/tree/master/ch02/06))
+   + VSCode, WebStorm과 같은 IDE에서 통합하여 사용할 수도 있고 Grunt, Gulp와 같은 태스크 자동화 도구의 파이프 연결을 통해 사용할 수도 있다. ([ch02/06. Grunt & Gulp : 태스크 자동화 도구 참고](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02/06))
 
 3. 검사 결과 살펴보기
 

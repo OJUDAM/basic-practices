@@ -1,4 +1,4 @@
-## [JavaScript Practices](https://github.com/kickscar/javascript-practices) / [ch01](https://github.com/kickscar/javascript-practices/tree/master/ch01) / 02. JavaScript와 ECMAScript
+## [JavaScript Practices](https://github.com/kickscar-javascript/basic-practices) / [ch01](https://github.com/kickscar-javascript/basic-practices/tree/master/ch01) / 02. JavaScript와 ECMAScript
 
 ### 1. ECMAScript 표준 명세
 
@@ -11,7 +11,7 @@
    - 구현된 스크립트 언어의 문법 체계로 코드가 작성되어야 한다.
    - 작성된 코드는 스크립트 엔진(인터프리터)을 통해 실행되어야 한다.
 
-4. 앞의 [JavaScript 타임라인](https://github.com/kickscar/javascript-practices/tree/master/ch01/01) 에서 본 것처럼 ECMAScript 표준 명세의 구현체는 JavaScript만 있었던 것은 아니였다.
+4. 앞의 [JavaScript 타임라인](https://github.com/kickscar-javascript/basic-practices/tree/master/ch01/01) 에서 본 것처럼 ECMAScript 표준 명세의 구현체는 JavaScript만 있었던 것은 아니였다.
 
    
 
@@ -28,7 +28,7 @@
 
 1. 어도비 플래시 애니메이션 구현을 위해 개발된 스크립트로 언어적 문법은 스크립트에 기반하지만 Java와 비슷하게 컴파일 후 중간 코드를 AVM(ActionScript Virtual Machine)에서 실행한다.
 2. 어도비가 모질라와 함께 ECMAScript 4의 명세 작업을 주도하면서 개발되었고 엔진 이름은 Tamarin 이다.
-3. FLEX, AIR, 플래시 라이트 등의 플래시 파생 기술들과 데스크톱, 모바일로 실행 플랫폼을 넓혀갔지만 앞의 [JavaScript 타임라인](https://github.com/kickscar/javascript-practices/tree/master/ch01/01) 에서도 언급된 것 처럼 ECMAScript 4 명세의 폐기와 함께 시장에서 거의 퇴출되었다.
+3. FLEX, AIR, 플래시 라이트 등의 플래시 파생 기술들과 데스크톱, 모바일로 실행 플랫폼을 넓혀갔지만 앞의 [JavaScript 타임라인](https://github.com/kickscar-javascript/basic-practices/tree/master/ch01/01) 에서도 언급된 것 처럼 ECMAScript 4 명세의 폐기와 함께 시장에서 거의 퇴출되었다.
 
 #### 2-3. JavaScript 
 

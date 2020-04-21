@@ -1,4 +1,4 @@
-## [JavaScript Practices](https://github.com/kickscar/javascript-practices) / [ch01](https://github.com/kickscar/javascript-practices/tree/master/ch01) / 01. 자바스크립트 타임라인
+## [JavaScript Practices](https://github.com/kickscar-javascript/basic-practices) / [ch01](https://github.com/kickscar-javascript/basic-practices/tree/master/ch01) / 01. 자바스크립트 타임라인
 
 JavaScript의 최초 개발부터 변화되어 온 과정 그리고 JavaScript 표준 명세 ECMAScript의 최신 버젼까지의 시간순 나열이다. 단순한 버젼 나열이 아닌, 관련있는 기술과 사건들의 인과 관계들도 함께 나열한다.
 

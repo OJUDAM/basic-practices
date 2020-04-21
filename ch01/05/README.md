@@ -1,4 +1,4 @@
-## [JavaScript Practices](https://github.com/kickscar/javascript-practices) / [ch01](https://github.com/kickscar/javascript-practices/tree/master/ch01) / 05. 주요 Library와 Frameworks 
+## [JavaScript Practices](https://github.com/kickscar-javascript/basic-practices) / [ch01](https://github.com/kickscar-javascript/basic-practices/tree/master/ch01) / 05. 주요 Library와 Frameworks 
 
 #### 1-1. jQuery
 

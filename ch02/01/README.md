@@ -1,4 +1,4 @@
-## [JavaScript Practices](https://github.com/kickscar/javascript-practices) / [ch02](https://github.com/kickscar/javascript-practices/tree/master/ch02) / 01. Node : OS 레벨 자바스크립트 런타임 환경
+## [JavaScript Practices](https://github.com/kickscar-javascript/basic-practices) / [ch02](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02) / 01. Node : OS 레벨 자바스크립트 런타임 환경
 
 ### 1. 소개 및 설치
 
@@ -6,7 +6,7 @@
 #### 1-1. 소개
 1. 브라우저 레벨이 아닌, OS 레벨에서 자바스크립트 코드를 실행할 수 있는 런타임 환경을 제공한다.
 2. 서버 사이드 개발을 도와주는 라이브러리와 OS 레벨 접근을 위한 API 라이브러리 등의 애플리케이션 플랫폼적인 기능들을 빼고 쉽게 생각하면, CLI 자바스트립트 인터프리터라 보면 된다. (REPL 지원)
-3. 개괄적인 소개는 [ch01/04. Node.js](https://github.com/kickscar/javascript-practices/tree/master/ch01/04) 참고한다.  
+3. 개괄적인 소개는 [ch01/04. Node.js](https://github.com/kickscar-javascript/basic-practices/tree/master/ch01/04) 참고한다.  
 4. 함께 설치되는 주요 도구
    - npm(Node Package Manager)
      - 다양한 패키지와 도구들을 설치할 때 필요한 중요한 도구이다.

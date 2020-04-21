@@ -1,4 +1,4 @@
-## [JavaScript Practices](https://github.com/kickscar/javascript-practices) / [ch01](https://github.com/kickscar/javascript-practices/tree/master/ch01) / 03. CommonJS 와 AMD
+## [JavaScript Practices](https://github.com/kickscar-javascript/basic-practices) / [ch01](https://github.com/kickscar-javascript/basic-practices/tree/master/ch01) / 03. CommonJS 와 AMD
 
 ### 1. JavaScript 모듈
 

@@ -1,4 +1,4 @@
-## [JavaScript Practices](https://github.com/kickscar/javascript-practices) / [ch03](https://github.com/kickscar/javascript-practices/tree/master/ch03) / 02. 기본 타입과 객체
+## [JavaScript Practices](https://github.com/kickscar-javascript/basic-practices) / [ch03](https://github.com/kickscar-javascript/basic-practices/tree/master/ch03) / 02. 기본 타입과 객체
 
 JavaScript의 데이터 타입은 크게 **기본(원시, Primitive) 타입**과 **객체(Object)** 이렇게 두 가지로 나눌 수 있다. 기본 타입의 값들을 제외한 모든 다른 값들은 객체다. 
 

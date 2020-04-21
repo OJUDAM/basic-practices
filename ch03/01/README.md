@@ -1,4 +1,4 @@
-## [JavaScript Practices](https://github.com/kickscar/javascript-practices) / [ch03](https://github.com/kickscar/javascript-practices/tree/master/ch03) / 01. 변수와 상수
+## [JavaScript Practices](https://github.com/kickscar-javascript/basic-practices) / [ch03](https://github.com/kickscar-javascript/basic-practices/tree/master/ch03) / 01. 변수와 상수
 
 #### 1-1. 변수(Variable)
 
@@ -77,7 +77,7 @@
 
 4. 리터럴 단어 자체는 소스 코드의 정적(lexical) 구조에서의 의미가 더 크다. 코드가 실행될 때에는 문자로 표현된 리터럴은 변수로 저장되는 값인 데이터가 된다. 위의 1-1 변수 예제 코드에서 `i`라는 변수 이름으로 숫자 값 저장을 위해 `10` 이라는 숫자형 리터럴을 사용했다고 설명할 수 있다.
 
-5. JavaScript의 좋은 것(Good Parts) 중에 하나는 리터럴이 풍부하다는 것이다. [ch03/02. 데이터 타입](/kickscar/javascript-practices/tree/master/ch03/02) 에서 다루겠지만 각각의 데이터 타입마다 다양한 리터럴을 지원한다.
+5. JavaScript의 좋은 것(Good Parts) 중에 하나는 리터럴이 풍부하다는 것이다. [ch03/02. 데이터 타입](/kickscar-javascript/basic-practices/tree/master/ch03/02) 에서 다루겠지만 각각의 데이터 타입마다 다양한 리터럴을 지원한다.
 
 6. **변수**의 개념, 변수 이름을 짓기 위한 **식별자** 그리고 값을 변수로 저장하기 위한 문자 표현, **리터럴**을 모두 언급 했기 때문에 실제 변수로 값을 저장하는 대입 구문(Assignment Statement)을 작성 할 수 있게 되었다.
 
@@ -145,7 +145,7 @@
 
    - C 와 같은 언어는 선언과 정의를 구분하는 대표적 언어이다.
 
-   - 출력 결과를 보면 y 가 `undefined` 로 출력된다.  [ch03/02. 데이터 타입](/kickscar/javascript-practices/tree/master/ch03/02) 에서 다루는 내용이지만 `undefined`는 자바스크립트 기본 타입중에 하나로 값을 명시적으로 대입하지 않았지만 `undefined` 가 암시적으로 대입되었다. 아래 코드처럼 명시적 대입도 가능하지만 굳이 하지 않는다.
+   - 출력 결과를 보면 y 가 `undefined` 로 출력된다.  [ch03/02. 데이터 타입](/kickscar-javascript/basic-practices/tree/master/ch03/02) 에서 다루는 내용이지만 `undefined`는 자바스크립트 기본 타입중에 하나로 값을 명시적으로 대입하지 않았지만 `undefined` 가 암시적으로 대입되었다. 아래 코드처럼 명시적 대입도 가능하지만 굳이 하지 않는다.
 
      ```javascript
      var y = undefined;
@@ -157,7 +157,7 @@
 
 4. 보통, 변수의 존재 범위를 스코프(Scope, 범위) 라고 한다. 소스 코드만 보면 변수가 어떤 스코프인 지 판단할 수 있는 스코프를 정적 스코프라 한다.  JavaScript는 정적 스코프이다.
 
-5. 문제는 소스 코드에 보이는 스코프와 프로그램 실행 흐름에서 생겨나는 스코프가 차이가 있다는 것이다. JavaScript 스코프는 처음부터 혼란스럽고 이해하기 만만치 않은 개념들도 있다. 자세한 내용은 [ch05 스코프(Scopre)](/kickscar/javascript-practices/tree/master/ch05) 를 참고 한다.
+5. 문제는 소스 코드에 보이는 스코프와 프로그램 실행 흐름에서 생겨나는 스코프가 차이가 있다는 것이다. JavaScript 스코프는 처음부터 혼란스럽고 이해하기 만만치 않은 개념들도 있다. 자세한 내용은 [ch05 스코프(Scopre)](/kickscar-javascript/basic-practices/tree/master/ch05) 를 참고 한다.
 
 6. JavaScript의 정적 스코프는 전역 스코프(Global Scope), 블록 스코프(Block Scope), 함수 스코프(Function Scope)에 적용된다.  JavaScript의 변수는 이 세 가지 스코프를 가질 수 있다는 말이다.
 
@@ -165,7 +165,7 @@
 
 8. `var` 를 사용하지 않고 함수 내부에서 변수를 정의 했을 때 전역 스코프를 가지는 문제점과  `var` 의 작동 원리 Hoisting이 가지는 혼란스러움 때문에 ES6에서는 새롭게 `const`와 `let`을 사용하여 변수를 정의하도록 하였다. 이 두 키워드는 ES6 전까지는 없었던 블록 스코프를 가지도록 한다.
 
-9. 간단히 정리하면, `let`과 `const`를 사용해서 변수를 정의하라는 것이고 자세한 그 이유는 [ch05 스코프(Scopre)](/kickscar/javascript-practices/tree/master/ch05) 참고한다.
+9. 간단히 정리하면, `let`과 `const`를 사용해서 변수를 정의하라는 것이고 자세한 그 이유는 [ch05 스코프(Scopre)](/kickscar-javascript/basic-practices/tree/master/ch05) 참고한다.
 
 10. 두 키워드 중  `let`은 변수 정의에 사용한다. `const`는 정의한 후 값이 변하지 않는 상수 정의에 사용한다.
 

@@ -1,4 +1,4 @@
-## [JavaScript Practices](https://github.com/kickscar/javascript-practices) / [ch02](https://github.com/kickscar/javascript-practices/tree/master/ch02) / 05. JSDoc : 문서화 도구
+## [JavaScript Practices](https://github.com/kickscar-javascript/basic-practices) / [ch02](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02) / 05. JSDoc : 문서화 도구
 
 ### 1. 소개
 

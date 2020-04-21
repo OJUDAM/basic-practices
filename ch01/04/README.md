@@ -1,4 +1,4 @@
-## [JavaScript Practices](https://github.com/kickscar/javascript-practices) / [ch01](https://github.com/kickscar/javascript-practices/tree/master/ch01) / 04. Node.js
+## [JavaScript Practices](https://github.com/kickscar-javascript/basic-practices) / [ch01](https://github.com/kickscar-javascript/basic-practices/tree/master/ch01) / 04. Node.js
 
 ### 1. JavaScript Runtime
 
@@ -30,7 +30,7 @@
 
 1. 비동기 프로그래밍
    + 처음부터 Node는 고성능 비동기 애플리케이션 작성 플랫폼으로 구상되고 설계되었다.
-   + 당연히,  JavaScript 엔진 기반으로 개발되었기 때문에 JavaScript 비동기 프로그래밍 ([ch10. 비동기 자바스크립트](https://github.com/kickscar/javascript-practices/tree/master/ch10) 참고) 모델에 영향을 받아 개선되고 발전하여 왔다. 
+   + 당연히,  JavaScript 엔진 기반으로 개발되었기 때문에 JavaScript 비동기 프로그래밍 ([ch10. 비동기 자바스크립트](https://github.com/kickscar-javascript/basic-practices/tree/master/ch10) 참고) 모델에 영향을 받아 개선되고 발전하여 왔다. 
      - 초기 프로그래밍 모델은 함수형 프로그래밍의 리액터 패턴(CPS에 기반한 코드 작성법)의 콜백함수 였다. 하지만  콜백 지옥(무한 들여쓰기, 소스코드가 대각선으로 계속 늘어지는 것)의 코드가 복잡해 지는 문제가 있다.
      - Generator와 Promise(ECMAScript 2015) 와 [async/await](http://rossboucher.com/await) 함수 지원(ECMASscipt 2017) 으로 지금은 동기 프로그래밍 코드처럼 쉽게 비동기 코드를 작성할 수 있다.
 2. 최신 ECMAScript 표준 명세 지원
@@ -47,13 +47,13 @@
      + PostgreSQL 연동: [node-postgres](https://node-postgres.com/)
      + Elasticsearch 연동: [elasticsearch.js](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/index.html)
 4. 다양한 개발 도구 및 라이브러리 지원
-   + [트랜스컴파일](https://github.com/kickscar/javascript-practices/tree/master/ch02/03)
+   + [트랜스컴파일](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02/03)
      + 서버 개발 뿐만 아니라 웹브라우저 애플리케이션 개발에도 Node.js를 사용한다. 이를 위해서는 웹브라우저에서 지원하는 JavaScript 코드로 변환이 필요한데 이를 위한 개발도구이다.
      + Babel
-   + [코드 품질 개선](https://github.com/kickscar/javascript-practices/tree/master/ch02/02)
+   + [코드 품질 개선](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02/02)
      + Lint 도구들로 실행 전 작성된 코드의 문제점을 보완하기 위한 유효성 검사 도구이다.
      + ESLint, JSLint, JSHint
-   + [빌드](https://github.com/kickscar/javascript-practices/tree/master/ch02/06) 및 [번들링](https://github.com/kickscar/javascript-practices/tree/master/ch02/07)
+   + [빌드](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02/06) 및 [번들링](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02/07)
      + 서버와 클라이언트 애플리케이션 개발에 사용되는 도구들의 단계적 실행과 실행 과정을 자동화하는 도구이다. 
      + JavaScript 코드 모듈 뿐만 아니라 다양한 리소스(CSS, Image 등) 모듈들을 하나의 JavaScript 번들로 생성하는 도구
      + Grunt, Gulp, Webpack

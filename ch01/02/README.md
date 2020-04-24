@@ -2,63 +2,53 @@
 
 ### 1. ECMAScript 표준 명세
 
-1. ECMAScript와 JavaScript 관계는 다분히 공학분야의 학술적 관계다.
+​	ECMAScript와 JavaScript 관계는 다분히 공학분야의 학술적 관계다. 기술적으로는 ECMAScript 표준 명세의 규칙, 지침대로 구현된 구현체 중 하나로  JavaScript를 보는 것이 맞다.  구현체의 의미응 생각해 보면 다음과 같다.
 
-2. 기술적으로는 ECMAScript 표준 명세의 규칙, 지침대로 구현된 구현체 중 하나로  JavaScript를 보는 것이 맞다. 
+1. 구현된 스크립트 언어의 문법 체계로 코드가 작성되어야 한다.
+2. 작성된 코드는 스크립트 엔진(인터프리터)을 통해 실행되어야 한다.
 
-3. 구현체의 의미
-
-   - 구현된 스크립트 언어의 문법 체계로 코드가 작성되어야 한다.
-   - 작성된 코드는 스크립트 엔진(인터프리터)을 통해 실행되어야 한다.
-
-4. 앞의 [JavaScript 타임라인](https://github.com/kickscar-javascript/basic-practices/tree/master/ch01/01) 에서 본 것처럼 ECMAScript 표준 명세의 구현체는 JavaScript만 있었던 것은 아니였다.
-
-   
+​	앞의 [JavaScript 타임라인](https://github.com/kickscar-javascript/basic-practices/tree/master/ch01/01) 에서 본 것처럼 ECMAScript 표준 명세의 구현체는 JavaScript만 있었던 것은 아니였다.
 
 ### 2. ECMAScript의 구현체
 
 #### 2-1. JScript
 
-1. Microsoft에서 개발한 ECMAScript 표준 명세 구현체이다.
-2. 기본적으로 ECMAScript 5 명세를 구현하지만 거기에 Active Scripting 이라는 자신들의 .NET Runtime 스크립팅 명세가 추가 되어 있다.
-3. IE9 부터 Chakra(차크라) 이름의 엔진이 내장 되었는데 ECMAScript 5 명세를 준수하고 Active Scripting까지 지원하는 JScript 엔진이라 볼 수 있다.
-4. IE Edge에 내장된 Chakra 엔진은 IE9+의 jScript엔진과 이름은 같지만 Active Scripting 기능을 빼고 최신 ECMAScript 명세만을 구현한 엔진(순수 JavaScript 엔진)이다. 
+​	Microsoft에서 개발한 ECMAScript 표준 명세 구현체이다. 기본적으로 ECMAScript 5 명세를 구현하지만 거기에 Active Scripting 이라는 자신들의 .NET Runtime 스크립팅 명세가 추가 되어 있다.
+
+​	IE9 부터 Chakra(차크라) 이름의 엔진이 내장 되었는데 ECMAScript 5 명세를 준수하고 Active Scripting까지 지원하는 JScript 엔진이라 볼 수 있다. IE Edge에 내장된 Chakra 엔진은 IE9+의 jScript엔진과 이름은 같지만 Active Scripting 기능을 빼고 최신 ECMAScript 명세만을 구현한 엔진(순수 JavaScript 엔진)이다. 
 
 #### 2-2. ActionScript
 
-1. 어도비 플래시 애니메이션 구현을 위해 개발된 스크립트로 언어적 문법은 스크립트에 기반하지만 Java와 비슷하게 컴파일 후 중간 코드를 AVM(ActionScript Virtual Machine)에서 실행한다.
-2. 어도비가 모질라와 함께 ECMAScript 4의 명세 작업을 주도하면서 개발되었고 엔진 이름은 Tamarin 이다.
-3. FLEX, AIR, 플래시 라이트 등의 플래시 파생 기술들과 데스크톱, 모바일로 실행 플랫폼을 넓혀갔지만 앞의 [JavaScript 타임라인](https://github.com/kickscar-javascript/basic-practices/tree/master/ch01/01) 에서도 언급된 것 처럼 ECMAScript 4 명세의 폐기와 함께 시장에서 거의 퇴출되었다.
+​	어도비 플래시 애니메이션 구현을 위해 개발된 스크립트로 언어적 문법은 스크립트에 기반하지만 Java와 비슷하게 컴파일 후 중간 코드를 AVM(ActionScript Virtual Machine)에서 실행한다. 어도비가 모질라와 함께 ECMAScript 4의 명세 작업을 주도하면서 개발되었고 엔진 이름은 Tamarin 이다. FLEX, AIR, 플래시 라이트 등의 플래시 파생 기술들과 데스크톱, 모바일로 실행 플랫폼을 넓혀갔지만 앞의 [JavaScript 타임라인](https://github.com/kickscar-javascript/basic-practices/tree/master/ch01/01) 에서도 언급된 것 처럼 ECMAScript 4 명세의 폐기와 함께 시장에서 거의 퇴출되었다.
 
 #### 2-3. JavaScript 
 
-1. 앞의 ECMAScript 구현체들의 기술 상황과 현재의 시장 상황 등을 고려해보면 ECMAScript 표준 명세 구현체는  JavaScript 밖에 없다.  따라서 JavaScript와 ECMAScript는 같은 것이라 생각해도 큰 무리는 없다.
+​	앞의 ECMAScript 구현체들의 기술 상황과 현재의 시장 상황 등을 고려해보면 ECMAScript 표준 명세 구현체는  JavaScript 밖에 없다.  따라서 JavaScript와 ECMAScript는 같은 것이라 생각해도 큰 무리는 없다. JavaScript 엔진은 그 종류가 많다.
 
-2. JavaScript 엔진
-
-   - [**SpiderMonkey**](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey)
-
-     최초의 JavaScript 엔진 **/** Mozila FIrefox 웹브라우저 **/** ECMAScript 2015 (ES6)
-
-   - **Chakra(JScript)**
-
-     Microsoft JScript 엔진 **/** Internet Explorer 9+ 웹브라우저 **/** ECMAScript 5  
-
-   - [**Charkra(JavaScript)**](https://github.com/Microsoft/ChakraCore)
-
-     Microsoft JavaScript 엔진 **/** Internet Explorer Edge 웹브라우저 **/** ECMAScript 2015 (ES6)
-
-   - [**V8**](https://v8.dev/)
-
-     Google **/** Chrome, Opera14+ 웹브라우저, **Node.js Runtime** **/** ECMAScript 2015 (ES6)
-
-   - [**KJS**](https://api.kde.org/4.x-api/kdelibs-apidocs/kjs/html/index.html)
-
-     KDE **/** Konqueror Web Browser **/** ECMAScript 2015 (ES6) 
-
-   - [**JavasciptCore**](https://trac.webkit.org/wiki/JavaScriptCore)
-
-     Apple **/** Safari 웹브라우저 Webkit 프레임워크 JS Engine, React Native App **/** ECMAScript 2015 (ES6)
+1. [**SpiderMonkey**](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey)
+   - 최초의 JavaScript 엔진 
+   - Mozila FIrefox 웹브라우저
+   - ECMAScript 2015 (ES6)
+2. **Chakra(JScript)**
+   - Microsoft JScript 엔진
+   - Internet Explorer 9+ 웹브라우저
+   - ECMAScript 5
+3. [**Charkra(JavaScript)**](https://github.com/Microsoft/ChakraCore)
+   - Microsoft JavaScript 엔진
+   - Internet Explorer Edge 웹브라우저
+   - ECMAScript 2015 (ES6)
+4. [**V8**](https://v8.dev/)
+   - Google **/** Chrome, Opera14+ 웹브라우저, 
+   - **Node.js Runtime**
+   - ECMAScript 2015 (ES6)
+5. [**KJS**](https://api.kde.org/4.x-api/kdelibs-apidocs/kjs/html/index.html)
+   - KDE
+   - Konqueror Web Browser
+   - ECMAScript 2015 (ES6) 
+6. [**JavasciptCore**](https://trac.webkit.org/wiki/JavaScriptCore)
+   - Apple
+   - Safari 웹브라우저 Webkit 프레임워크 JS Engine, React Native App 
+   - ECMAScript 2015 (ES6)
 
 
 
@@ -66,9 +56,9 @@
 
 #### 3-1. 정의
 
-1. ECMAScript2015(ES6) 이전의 ECMAScript 표준 명세 구현체인  JavaScript의 언어적 결함, 데이터 타입의 모호함 등의 여러 이유로 개발된 JavaScript 파생 스크립트 언어들을 가리킨다.
-2.  JavaScript 파생 스크립트 언어이지 ECMAScript 표준 명세의 구현체라 볼 수 없다. 그 이유는 이 비표준 스크립트 언어로 작성된 코드를 실행하는 엔진은 대부분 JavaScript 엔진이다. 직접 실행할 수 있는 엔진이 존재하지 않기 때문이다.
-3. 따라서, 대부분 컴파일러(트랜스컴파일러 또는 트랜스파일러)을 통해  JavaScript 코드로 변환되어 실행된다.
+​	ECMAScript2015(ES6) 이전의 ECMAScript 표준 명세 구현체인  JavaScript의 언어적 결함, 데이터 타입의 모호함 등의 여러 이유로 개발된 JavaScript 파생 스크립트 언어들을 가리킨다.
+
+​	JavaScript 방언쯤 되는 파생 스크립트 언어이지 ECMAScript 표준 명세의 구현체라 볼 수 없다. 그 이유는 이 비표준 스크립트 언어로 작성된 코드를 실행하는 엔진은 대부분 JavaScript 엔진이다. 직접 실행할 수 있는 엔진이 존재하지 않기 때문이다. 따라서, 대부분 컴파일러(트랜스컴파일러 또는 트랜스파일러)을 통해  JavaScript 코드로 변환되어 실행된다.
 
 #### 3-2. 종류
 

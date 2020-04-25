@@ -14,7 +14,9 @@
 
    ​	클라이언트 애플리케이션들이 갈수록 복잡해지기 때문에 모듈화 개발이 필요하다. 그런데 모듈의 필요성이 처음 시작된 계기는 서버사이드 애플리케이션 개발을 위해 JavaScript의 범용화 노력으로 시작되었다. 당시는 JavaScript에는 모듈 기능이 없었기 때문에 외부 라이브러리([ch01/ 03. CommonJS와 AMD](https://github.com/kickscar-javascript/basic-practices/tree/master/ch01/03))에 의존 하였지만 ES6부터는 JavaScript 자체적으로 모듈 지원을 하기 때문에 현재는 별도의 외부 라이브러리는 필요 없다.
 
-   ​	JavaScript 모듈은 주로 클래스, 함수, 객체, 상수 등을 모아놓고 외부 애플리케이션들에서 공통으로 사용하는 라이브러리들을 의미한다. 그리고 규모가 있는 애플리케이션 개발에서는 개발 중인  JaveScript 코드들을 분리해서 모듈화 하고 의존관계를 부여하고 관리한다.
+   ​	[JavaScript 모듈](https://github.com/kickscar-javascript/basic-practices/tree/master/ch09)은 코드를 작성할 때 반복적으로 사용될 수 있는 클래스, 함수, 객체, 상수 등을 모아놓은 js 파일을 의미한다. 물론, ES6 모듈이 그렇게 간단하지 않다. [ch09. JavaScript 모듈](https://github.com/kickscar-javascript/basic-practices/tree/master/ch09)의 내용을 이해할 필요가 있다. 여튼, 규모가 있는 애플리케이션 개발에서도 개발 중인  JaveScript 코드들을 분리해서 모듈화 하고 의존관계를 부여하고 관리할 수도 있다.
+
+   ​	웹팩에서 모듈이 중요한 이유는 웹팩이 번들링 대상을 모듈 단위로 보기 때문이며 모듈간의 의존성 분석을 기반(의존성 트리)으로 번들린 작업을 하기 때문이다.
 
    
 

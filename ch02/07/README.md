@@ -16,7 +16,7 @@
 
    ​	[JavaScript 모듈](https://github.com/kickscar-javascript/basic-practices/tree/master/ch09)은 코드를 작성할 때 반복적으로 사용될 수 있는 클래스, 함수, 객체, 상수 등을 모아놓은 js 파일을 의미한다. 물론, ES6 모듈이 그렇게 간단하지 않다. [ch09. JavaScript 모듈](https://github.com/kickscar-javascript/basic-practices/tree/master/ch09)의 내용을 이해할 필요가 있다. 여튼, 규모가 있는 애플리케이션 개발에서도 개발 중인  JaveScript 코드들을 분리해서 모듈화 하고 의존관계를 부여하고 관리할 수도 있다.
 
-   ​	웹팩에서 모듈이 중요한 이유는 웹팩이 번들링 대상을 모듈 단위로 보기 때문이며 모듈간의 의존성 분석을 기반(의존성 트리)으로 번들린 작업을 하기 때문이다.
+   ​	웹팩에서 모듈이 중요한 이유는 웹팩이 번들링 대상을 모듈 단위로 보기 때문이며 모듈간의 의존성 분석을 기반(의존성 트리)으로 번들링 작업을 하기 때문이다.
 
    
 

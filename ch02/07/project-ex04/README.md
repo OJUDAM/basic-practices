@@ -43,8 +43,8 @@ $ npm i -D webpack webpack-cli webpack-dev-server
 
 ```javascript
 "scripts": {
-    "start": "node_modules/.bin/webpack-dev-server --progress",
-  	"build": "node_modules/.bin/webpack"
+	"start": "node_modules/.bin/webpack-dev-server --progress",
+	"build": "node_modules/.bin/webpack"
 }
 ```
 

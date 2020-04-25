@@ -13,47 +13,46 @@
 
    webpack.config.js 의 `modules` 섹션에서 로더들을 설정한다. 로더의 설정은 크게 두 부분으로 나누어 볼 수 있다.
 
-   - 번들링 전처리로 사용하는 로더들을 지정하는 설정
+- 번들링 전처리로 사용하는 로더들을 지정하는 설정
+
    - 로더들의 개별적 기능과 관련된 설정
 
    로더의 기능과 관련된 개별적 설정은 `modules` 섹션의 웹팩 로더를 지정하는 설정과 함께 할 수 있다. 하지만 이 방법은  webpack.config.js 가 복잡해지고 방대 해지는 문제점이 있다. 따라서 외부에 로더별로 개별적으로 설정하는 방법이 일반적이다.
 
 ### 3. project-ex04 생성
 
-   - 프로젝트 project-ex04 디렉토리 생성
+1. 프로젝트 project-ex04 디렉토리 생성
 
-     ```bash
-     $ mkdir project-ex04
-     $ cd project-ex04
-     ```
+```bash
+$ mkdir project-ex04
+$ cd project-ex04
+```
 
-   - package.json 파일 생성
+2. package.json 파일 생성
 
-     ```bash
-     $ npm init -y
-     ```
+```bash
+$ npm init -y
+```
 
-   - 웹팩 코어, 웹팩 CLI 도구 및  웹팩 개발 서버 설치
+3. 웹팩 코어, 웹팩 CLI 도구 및  웹팩 개발 서버 설치
 
-     ```bash
-     $ npm i -D webpack webpack-cli webpack-dev-server
-     ```
+```bash
+$ npm i -D webpack webpack-cli webpack-dev-server
+```
 
-   - 애플리케이션 기능과 내용은 앞의 project-ex03 과 같으므로 project-ex03의 public, src 디렉토리 복사한다.
+4. 애플리케이션 기능과 내용은 앞의 project-ex03 과 같으므로 project-ex03의 public, src 디렉토리 복사한다.
+5. project-ex03의 webapck.config.js 도 복사한다.
+6. package.json의 "scripts" 내용을 수정한다.
 
-   - project-ex03의 webapck.config.js 도 복사한다.
+```javascript
+"scripts": {
+    "start": "node_modules/.bin/webpack-dev-server --progress",
+  	"build": "node_modules/.bin/webpack"
+}
+```
 
-   - package.json의 "scripts" 내용을 수정한다.
-
-     ```javascript
-     "scripts": {
-         "start": "node_modules/.bin/webpack-dev-server --progress",
-       	"build": "node_modules/.bin/webpack"
-     }
-     ```
-
-     - start : 로더 전처리 결과를 브라우저 화면에서 확인하기 위해 개발 서버 실행 스크립트 이다.
-     - build: 로더 전처리 결과를 bundle.js 번들 파일에서 JavaScript 코드로 확인하기 위한 빌드 스크립트 이다. 
+- start : 로더 전처리 결과를 브라우저 화면에서 확인하기 위해 개발 서버 실행 스크립트 이다.
+- build: 로더 전처리 결과를 bundle.js 번들 파일에서 JavaScript 코드로 확인하기 위한 빌드 스크립트 이다. 
 
    - 개발 서버 실행 또는 빌드를 해보고 프로젝트에 문제가 없는지 확인 해보자.
 
@@ -66,9 +65,7 @@
    }
    ```
 
-   - 로더의 코드는 비교적 간단하다. 전처리를 하는 함수를 하나 export 하는 것이 전부다.
-   - 전처리 대상이 되는 파일의 내용을 source 로 전달 받아서 전처리를 한 다음 export구문의 문자열을 반환하면 된다. 반환하는 문자열은 JavaScript 코드여야 한다. 
-   - text-loader는 hello.txt 안의 내용을 source로 받아 간단한 객체의 text 속성의 값으로 세팅한 후 그 객체를 export 하는 문자열을 반환한다. 
+​	로더의 코드는 비교적 간단하다. 전처리를 하는 함수를 하나 export 하는 것이 전부다. 전처리 대상이 되는 파일의 내용을 source 로 전달 받아서 전처리를 한 다음 export구문의 문자열을 반환하면 된다. 반환하는 문자열은 JavaScript 코드여야 한다. text-loader는 hello.txt 안의 내용을 source로 받아 간단한 객체의 text 속성의 값으로 세팅한 후 그 객체를 export 하는 문자열을 반환한다. 
 
 ### 5. 애플리케이션 수정 : App.js
 
@@ -83,15 +80,15 @@
    }
    ```
 
-   - 애플리케이션의 엔트리 포인트는 index.js 이다.  웹팩은 index.js를 시작으로 의존성 트리를 빌드하고 해당 파일의 전처리 로더에 전처리를 맡긴다. 의존성 트리를 만들 수 있는 명령은 다음과 같다.
-     - import
-     - require
-     - url
-   - index.js 를 보면 App.js를 import한다. 따라서 App.js는 의존성 트리에 추가되고 전처리 대상이 된다.
-   - App.js를 보면 hello.txt를 require로 로딩하기 때문에 hello.txt도 의존성 트리에 추가되고 전처리 대상이 된다.
-   - 그런데 사실, 아직 전처리를 위한 로더를 설정하지 않았기 때문에 아직 전처리 대상은 없다.
-   - 웹팩이 엔트리 포인트 index.js를 시작으로 의존성 트리를 빌드하고 전처리 대상을 탐색 한다는 것을 언급한 것이고 만일, 해당 파일에 대한 전처리 로더가 설정되어 있다면 전처리가 이루어 졌을 것이다.
-   - 그러면 확장자 txt 파일의 전처리를 위한 text-loader를 설정해 보자.  
+​	애플리케이션의 엔트리 포인트는 index.js 이다.  웹팩은 index.js를 시작으로 의존성 트리를 빌드하고 해당 파일의 전처리 로더에 전처리를 맡긴다. 의존성 트리를 만들 수 있는 명령은 다음과 같다.
+
+- import
+- require
+- url
+
+​	index.js 를 보면 App.js를 import한다. 따라서 App.js는 의존성 트리에 추가되고 전처리 대상이 된다. App.js를 보면 hello.txt를 require로 로딩하기 때문에 hello.txt도 의존성 트리에 추가되고 전처리 대상이 된다. 그런데 사실, 아직 전처리를 위한 로더를 설정하지 않았기 때문에 아직 전처리 대상은 없다.
+
+​	웹팩이 엔트리 포인트 index.js를 시작으로 의존성 트리를 빌드하고 전처리 대상을 탐색 한다는 것을 언급한 것이고 만일, 해당 파일에 대한 전처리 로더가 설정되어 있다면 전처리가 이루어 졌을 것이다. 그러면 확장자 txt 파일의 전처리를 위한 text-loader를 설정해 보자.  
 
 ### 6. text 파일 추가 : hello.txt
 
@@ -99,7 +96,7 @@
    Hello World
    ```
 
-   - "Hello World" 문자열이 브라우저 화면에 출력 될 것이다.
+​	"Hello World" 문자열이 브라우저 화면에 출력 될 것이다.
 
 ### 7. text-loader 로더 설정 : webpack.config.js
 
@@ -124,27 +121,28 @@
 
 ### 8. 빌드하기
 
-   - `npm run build` 로 빌드를 한다.
+​	`npm run build` 로 빌드를 한다.
 
-     <img src="http://image.kickscar.me:8080/markdown/javascript-practices/ch02-0726.png" />
+​	<img src="http://image.kickscar.me:8080/markdown/javascript-practices/ch02-0726.png" /> 
 
-   - text-loader의 전처리 내용 : bundle.js 에서 발췌
+​	text-loader의 전처리 내용을  bundle.js 에서 발췌해서 보면 다음과 같다.
 
-     ```javascript
-     function(e,t){
-     	e.exports={text:"Hello World"}
-     }
-     ```
+```javascript
+function(e,t){
+	e.exports={text:"Hello World"}
+}
+```
 
-     - 난독화가 되어있기 때문에 전체 코드의 분석을 위해서는 시간이 다소 걸리지만 대략, text-loader에 작성한 처리대로  hello.txt의 내용이 코드화 된 것을 확인할 수 있다.
-     - 브라우저에서 애플리케이션이 잘 동작하는 지 확인해보자. 
+​	난독화가 되어있기 때문에 전체 코드의 분석을 위해서는 시간이 다소 걸리지만 대략, text-loader에 작성한 처리대로  hello.txt의 내용이 코드화 된 것을 확인할 수 있다. 브라우저에서 애플리케이션이 잘 동작하는 지 확인해보자. 
 
 ### 9. 개발 서버 실행
 
-   - `npm start` 명령으로 개발 서버를 실행하고 브라우저로 접근해 보자
+`	npm start` 명령으로 개발 서버를 실행하고 브라우저로 접근해 보자
 
-     <img src="http://image.kickscar.me:8080/markdown/javascript-practices/ch02-0714.png" />
+<img src="http://image.kickscar.me:8080/markdown/javascript-practices/ch02-0714.png" />
 
-   - hello.txt 의 내용을 수정하면 다시 번들링 하는 것을 콘솔에서 확인 할 수 있다. 브라우저에서 변경 내용을 확인해 보자.
+​	
 
-     <img src="http://image.kickscar.me:8080/markdown/javascript-practices/ch02-0727.png" />
+​	hello.txt 의 내용을 수정하면 다시 번들링 하는 것을 콘솔에서 확인 할 수 있다. 브라우저에서 변경 내용을 확인해 보자.
+
+<img src="http://image.kickscar.me:8080/markdown/javascript-practices/ch02-0727.png" />

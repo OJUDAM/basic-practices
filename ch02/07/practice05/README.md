@@ -1,53 +1,58 @@
 ## [JavaScript Practices](https://github.com/kickscar-javascript/basic-practices) / [ch02](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02) / [07](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02/07) / 실습 05. React 애플리케이션 번들링
 
+### 1. 프로젝트 생성 및 설정
 
-### 1. project-ex05 생성
+#### 1.1 디렉토리 생성
 
-1. 프로젝트 project-ex05 디렉토리 생성
+   ```bash
+   $ mkdir project-ex05
+   $ cd project-ex05
+   ```
 
-```bash
-$ mkdir project-ex05
-$ cd project-ex05
-```
+#### 1.2 메니페스트 생성
 
-2. package.json 파일 생성
+   ```bash
+   $ npm init -y
+   ```
 
-```bash
-$ npm init -y
-```
+#### 1.3. 웹팩 코어, 웹팩 CLI 도구, 웹팩 개발 서버 설치
 
-3. 웹팩 코어, 웹팩 CLI 도구 및  웹팩 개발 서버 설치
-
-```bash
+   ```bash
 $ npm i -D webpack webpack-cli webpack-dev-server
-```
+   ```
 
-4. 애플리케이션 기능과 내용은 앞의 project-ex04 과 같으므로 project-ex04의 public, src 디렉토리 복사한다.
+#### 1-4. 애플리케이션 작성
 
-5. project-ex04의 webapck.config.js 도 복사한다.
+1. 애플리케이션 기능과 내용은 앞의 project-ex04 과 같으므로 project-ex04의 public, src 디렉토리 복사한다.
 
-6. package.json의 "scripts" 내용을 수정한다.
+2. project-ex04의 webapck.config.js 도 복사한다.
 
-```javascript
-"scripts": {
-    "start": "node_modules/.bin/webpack-dev-server --progress",
-  	"build": "node_modules/.bin/webpack"
-}
-```
+3. package.json의 "scripts" 내용을 수정한다.
 
-7. 개발 서버 실행 또는 빌드를 해보고 프로젝트에 문제 없는가 확인 해보자.
+   ```javascript
+   "scripts": {
+       "start": "node_modules/.bin/webpack-dev-server --progress",
+     	"build": "node_modules/.bin/webpack"
+   }
+   ```
+
+#### 1-5. 테스트
+
+​	개발 서버 실행 또는 빌드를 해보고 프로젝트에 문제 없는가 확인 해보자.
+
+
 
 ### 2. React 리팩토링
 
-​	지금까지의 실습에 사용하였던 애플리케이션을 React(JSX, ES6) 코드로 리팩토링 할 것이다.
-
-1. react, react-dom 패키지 설치
+#### 2.1 React 라이브러리 패키지 설치링
 
 ```
 npm i -D react react-dom
 ```
 
-2. 리팩토링 : App.js
+#### 2.2 리팩토링
+
+1. App.js
 
 ```jsx
 import React, { Component } from 'react';
@@ -64,7 +69,7 @@ export default App;
 
 ​	이전 실습 예제의 App.js와 완전 동일한 React 함수를 작성하였고 React Component를 반환한다. 이전 실습에서 작성한 text-loader로 hello.txt 변환 작업을 해야한다. 코드를 보면 hello.txt안의 text를 이용하는 코드가 있다. ES6과 JSX로 작성된 코드 이며 JSX 코드와 React에 대한 내용은 [react-practices](https://github.com/kickscar-javascript/react-practices) 을 참고 한다.
 
-3. 리팩토링: index.js
+2. index.js
 
 ```JSX
 import React from 'react';
@@ -81,9 +86,9 @@ ReactDOM.render(
 
 ### 3. 바벨 로더 적용
 
-​	바벨에 대한 개념 그리고 설정 및 사용 방법 등을 알고 있으면 바벨 로더 적용은 비교적 쉽다. 길거나 어려운 내용이 아니니  [ch02 / 03. Babel : 트랜스컴파일러 도구](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02/03) 을 참고해서 꼭 먼저 이해 하도록 한다.
+​	바벨에 대한 개념 그리고 설정 및 사용 방법을 알고 있으면 바벨 로더 적용은 비교적 쉽다. 내용이 많거나 어렵지 않으니 [ch02 / 03. Babel : 트랜스컴파일러 도구](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02/03) 을 참고해서 이해 하도록 한다.
 
-1. 바벨 로더 설치
+#### 3.1 바벨 로더 설치
 
 ```
 npm i -D @babel/core babel-loader @babel/preset-env @babel/preset-react
@@ -93,7 +98,9 @@ npm i -D @babel/core babel-loader @babel/preset-env @babel/preset-react
 
 ​	ES6 트랜스파일링을 위해 @babel/preset-env 프리셋을 설치한다. JSX 트랜스파일링을 위해 @babel/preset-react 프리셋을 설치한다.
 
-2. 바벨 로더 설정 : webpack.config.js
+#### 3.2 설정
+
+1. 로더 설정 : webpack.config.js
 
 ```JavaScript
 	.
@@ -114,9 +121,9 @@ npm i -D @babel/core babel-loader @babel/preset-env @babel/preset-react
 	.
 ```
 
-​	이전 실습에서 작성하였던 text-loader 설정을 그대로 유지하였다.  바벨 로더 설정을 보면, React 코드가 작성된 js 파일을 대상으로 하였다. 그리고 패키지가 설치된 node_modules의 js 파일들은 제외하였다. text-loader와는 다르게 babel-loader는 npm 패키지로 설치 되었기 때문에 소스 파일의 경로가 필요없고 이름만 설정해 주면 된다.
+​	이전 실습에서 작성하였던 text-loader 설정을 그대로 유지하였다.  바벨 로더 설정을 보면, React 코드가 작성된 js 파일을 대상으로 하였다. 그리고 패키지가 설치된 node_modules의 js 파일들은 제외하였다. text-loader와는 다르게 babel-loader는 npm 패키지로 설치 되었기 때문에 소스 파일의 경로가 필요없고 이름만 설정하면 된다.
 
-3. 바벨 설정 : babel.config.json
+2. 바벨 설정 : babel.config.json
 
 ```json
 {

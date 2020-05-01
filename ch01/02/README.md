@@ -2,7 +2,7 @@
 
 ### 1. ECMAScript 표준 명세
 
-​	ECMAScript와 JavaScript 관계는 다분히 공학분야의 학술적 관계다. 기술적으로는 ECMAScript 표준 명세의 규칙, 지침대로 구현된 구현체 중 하나로  JavaScript를 보는 것이 맞다.  구현체의 의미응 생각해 보면 다음과 같다.
+​	ECMAScript와 JavaScript 관계는 다분히 공학분야의 학술적 관계다. 기술적으로는 ECMAScript 표준 명세의 규칙, 지침대로 구현된 구현체 중 하나로  JavaScript를 보는 것이 맞다.  구현체의 의미는 다음과 같다.
 
 1. 구현된 스크립트 언어의 문법 체계로 코드가 작성되어야 한다.
 2. 작성된 코드는 스크립트 엔진(인터프리터)을 통해 실행되어야 한다.
@@ -15,7 +15,7 @@
 
 ​	Microsoft에서 개발한 ECMAScript 표준 명세 구현체이다. 기본적으로 ECMAScript 5 명세를 구현하지만 거기에 Active Scripting 이라는 자신들의 .NET Runtime 스크립팅 명세가 추가 되어 있다.
 
-​	IE9 부터 Chakra(차크라) 이름의 엔진이 내장 되었는데 ECMAScript 5 명세를 준수하고 Active Scripting까지 지원하는 JScript 엔진이라 볼 수 있다. IE Edge에 내장된 Chakra 엔진은 IE9+의 jScript엔진과 이름은 같지만 Active Scripting 기능을 빼고 최신 ECMAScript 명세만을 구현한 엔진(순수 JavaScript 엔진)이다. 
+​	IE9 부터 Chakra(차크라) 이름의 엔진이 내장 되었는데 ECMAScript 5 명세를 준수하고 Active Scripting까지 지원하는 JScript 엔진이라 볼 수 있다. IE Edge에 내장된 Chakra 엔진은 IE9+의 JScript엔진과 이름은 같지만 Active Scripting 기능을 빼고 최신 ECMAScript 명세만을 구현한 순수 JavaScript 엔진이다. 
 
 #### 2-2. ActionScript
 
@@ -58,7 +58,7 @@
 
 ​	ECMAScript2015(ES6) 이전의 ECMAScript 표준 명세 구현체인  JavaScript의 언어적 결함, 데이터 타입의 모호함 등의 여러 이유로 개발된 JavaScript 파생 스크립트 언어들을 가리킨다.
 
-​	JavaScript 방언쯤 되는 파생 스크립트 언어이지 ECMAScript 표준 명세의 구현체라 볼 수 없다. 그 이유는 이 비표준 스크립트 언어로 작성된 코드를 실행하는 엔진은 대부분 JavaScript 엔진이다. 직접 실행할 수 있는 엔진이 존재하지 않기 때문이다. 따라서, 대부분 컴파일러(트랜스컴파일러 또는 트랜스파일러)을 통해  JavaScript 코드로 변환되어 실행된다.
+​	JavaScript 방언쯤 되는 파생 스크립트 언어라 볼 수 있지만 ECMAScript 구현체라고는 볼 수 없다. 그 이유는 이 비표준 스크립트 언어로 작성된 코드를 실행하는 엔진은 대부분 JavaScript 엔진이다. 직접 실행할 수 있는 엔진이 존재하지 않기 때문이다. 따라서, 대부분 컴파일러(트랜스컴파일러 또는 트랜스파일러)을 통해  JavaScript 코드로 변환되어 실행된다.
 
 #### 3-2. 종류
 

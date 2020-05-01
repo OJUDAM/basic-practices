@@ -4,9 +4,13 @@
 
 #### 1-1. 필요성
 
-​	JavaScript가 인기를 끌면서 주요 호스트 환경인 웹브라우저뿐만 아니라 서버사이드 스크립트와 같은 다양한 환경에서 사용해보려는 노력이 있었다.  범용으로 JavaScript를 사용하기 위해서는 먼저 모듈화가 가능해야 한다.  JavaScript 모듈 표준 스펙의 제정 작업을 위한 2개의 프로젝트가 CommonJS와 AMD 이다.
+​	JavaScript가 인기를 끌면서 주요 호스트 환경인 웹브라우저뿐만 아니라 서버사이드 스크립트와 같은 다양한 환경에서 사용해보려는 노력이 있었다.  다양한 환경의 다양한 형태의 애플리케이션을 개발할 수 있는 범용으로 JavaScript를 사용하기 위해서는 선결 조건은 모듈화이다.  JavaScript 모듈 표준 스펙의 제정 작업을 위한 2개의 프로젝트가 CommonJS와 AMD 이다.
+
+​	ECMAScript6부터 정식으로 모듈 지원을 하기 시작했지만 그 전까지는 이 두 프로젝트가 JavaScript의 복잡한 애플리케이션, 라이브러리, 프레임워크등 모듈이 필요한 개발에 많은 도움을 주었고  ECMAScript6 표준 모듈 지원 스펙에도 영향을 주었다.
 
 #### 1-2. JavaScript 모듈
+
+​	JavaScript의 모듈을 코드에서 사용하고 프로그래밍에 적용하는 것은 [ch09. 모듈(Module)](https://github.com/kickscar-javascript/basic-practices/tree/master/ch09) 을 참고하고 여기서는 JavaScript의 모듈에 대한 이해를 돕는 내용을 정리한다.
 
 1. **스코프**
 

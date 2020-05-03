@@ -15,19 +15,19 @@
 <br/>
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-{ "ch04": "함수 (Function)" },
+{ "ch04": "내장 객체들(Built-in Objects)" }
 <br/>
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-{ "ch05": "스코프 (Scope)" },
+{ "ch05": "함수 (Function)" },
 <br/>
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-{ "ch06": "배열 (Array)" },
+{ "ch06": "스코프 (Scope)" },
 <br/>
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-{ "ch07": "객체지향 프로그래밍 (Object Oriented Programming)" },
+{ "ch07": "배열 (Array)" },
 <br/>
 
 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -35,15 +35,22 @@
 <br/>
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-{ "ch09": "모듈 (Module)" },
+{ "ch09": "객체지향 프로그래밍 (Object Oriented Programming)" },
 <br/>
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-{ "ch10": "비동기 자바스크립트 (Asynchronous JavaScript Programming)" },
+{ "ch10": "비동기 프로그래밍 (Asynchronous Programming)" },
 <br/>
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-{ "ch11": "내장 객체들(Built-in Objects)" }
+{ "ch11": "모듈 (Module)" },
 <br/>
 
+&nbsp;&nbsp;&nbsp;&nbsp;
+{ "ch12": "브라우저 프로그래밍(Browser Programming)" },
+<br/>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+{ "ch13": "서버 프로그래밍(Server Programming)" },
+<br/>
 ] 

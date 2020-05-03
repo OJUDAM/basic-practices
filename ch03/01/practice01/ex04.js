@@ -1,2 +1,6 @@
-const n = 10;
-n = 20;
+10;
+// x;
+y = 10;
+var z = 10;
+
+console.log(y, z);

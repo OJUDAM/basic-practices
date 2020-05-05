@@ -195,7 +195,9 @@ log('Hello World');
 
 `console`, `.` , ` log('Hello World')` 로 쪼개져서 해석되어 지고 실행된다. 쪼개고 보니 `2+2`와 별차이가 없다.  `.` 은 **프로퍼티 접근 연산자(Dot Operator, Property Accesor)** 이며 `console.log('Hello World')` 도 표현식이다.  함수 정의는 구문이지만 함수 호출은 표현식임을 알아야 한다.  [ch05 함수(Function)](/kickscar-javascript/basic-practices/tree/master/ch05) 에서 이 부분을 다시 다룬다.
 
-​	그러면, 마지막으로 눈 씻고 찾아보아도 `;` 와 구문이 하나도 없는 예제 '값 4에 대한 다양한 표현식 : ex02.js' 의 모든 표현식은 실행이 되는 것인가? 안되는 것인가? 답은 ex02.js 가 모듈로 실행되는 것인지 아닌지에 따라 다르다.  [ch11 모듈(Module)](/kickscar-javascript/basic-practices/tree/master/ch11) 에서 이 부분도 자세히 다룬다.
+​	그러면, 마지막으로 눈 씻고 찾아보아도 `;` 와 구문이 하나도 없는 예제 '값 4에 대한 다양한 표현식 : ex02.js' 의 모든 표현식은 실행이 되는 것인가? 안되는 것인가? 맨 마지막에 `console.log(i)` 함수 호출 표현식을 `;` 없이 붙혀 보면 알 수 있다.
+
+​	문법적으로 코드상에 한 개의 구문이 없어도 엔진은 코드 실행을 위해 **실행 컨텍스트(Execution Context)** 를 생성하기 때문에 실행된다. 구문은 **전역 코드** 또는 **함수 내부의 코드** 가 각각의 실행 컨텍스트 안에서 실행될 때, 그 실행 단위라 보면 된다.  
 
 ### 5. var 그리고 let과 const
 

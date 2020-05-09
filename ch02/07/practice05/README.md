@@ -5,8 +5,8 @@
 #### 1.1 디렉토리 생성
 
    ```bash
-   $ mkdir project-ex05
-   $ cd project-ex05
+   $ mkdir project-ex01
+   $ cd project-ex01
    ```
 
 #### 1.2 메니페스트 생성
@@ -23,11 +23,8 @@ $ npm i -D webpack webpack-cli webpack-dev-server
 
 #### 1-4. 애플리케이션 작성
 
-1. 애플리케이션 기능과 내용은 앞의 project-ex04 과 같으므로 project-ex04의 public, src 디렉토리 복사한다.
-
-2. project-ex04의 webapck.config.js 도 복사한다.
-
-3. package.json의 "scripts" 내용을 수정한다.
+1. 기능과 내용은 pratice04의 project-ex01과 같으므로 pratice04의 project-ex01에 있는 public, src 디렉토리및 webapck.config.js를 복사한다.
+2. package.json의 "scripts" 내용을 수정한다.
 
    ```javascript
    "scripts": {
@@ -39,7 +36,6 @@ $ npm i -D webpack webpack-cli webpack-dev-server
 #### 1-5. 테스트
 
 ​	개발 서버 실행 또는 빌드를 해보고 프로젝트에 문제 없는가 확인 해보자.
-
 
 
 ### 2. React 리팩토링
@@ -76,12 +72,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-ReactDOM.render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>,
-    document.getElementById('root')
-);
+ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
 ### 3. 바벨 로더 적용
@@ -108,10 +99,10 @@ npm i -D @babel/core babel-loader @babel/preset-env @babel/preset-react
 	.
     module: {
         rules: [{
-            test: /\.txt$/,
+            test: /\.txt$/i,
             loader: path.resolve('src/text-loader.js')
         },{
-            test: /\.js$/,
+            test: /\.js$/i,
             exclude: /node_modules/,
             loader: 'babel-loader'
         }]

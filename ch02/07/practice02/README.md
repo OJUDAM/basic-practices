@@ -5,8 +5,8 @@
 #### 1.1 디렉토리 생성
 
    ```bash
-   $ mkdir project-ex02
-   $ cd project-ex02
+   $ mkdir project-ex01
+   $ cd project-ex01
    ```
 
 #### 1.2 메니페스트 생성
@@ -24,7 +24,7 @@
 
 #### 1-4. 애플리케이션 작성
 
-​	기능과 내용은 project-ex01과 같으므로 project-ex01의 public, src 디렉토리 복사한다.
+​	기능과 내용은 pratice01의 project-ex01과 같으므로 pratice01의 project-ex01에 있는 public, src 디렉토리 복사한다.
 
 ### 2. 웹팩 설정
 

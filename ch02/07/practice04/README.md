@@ -21,8 +21,8 @@
 1. 프로젝트 project-ex04 디렉토리 생성
 
 ```bash
-$ mkdir project-ex04
-$ cd project-ex04
+$ mkdir project-ex01
+$ cd project-ex01
 ```
 
 2. package.json 파일 생성
@@ -37,9 +37,8 @@ $ npm init -y
 $ npm i -D webpack webpack-cli webpack-dev-server
 ```
 
-4. 애플리케이션 기능과 내용은 앞의 project-ex03 과 같으므로 project-ex03의 public, src 디렉토리 복사한다.
-5. project-ex03의 webapck.config.js 도 복사한다.
-6. package.json의 "scripts" 내용을 수정한다.
+4. 기능과 내용은 pratice03의 project-ex01과 같으므로 pratice02의 project-ex03에 있는 public, src 디렉토리및 webapck.config.js를 복사한다.
+5. package.json의 "scripts" 내용을 수정한다.
 
 ```javascript
 "scripts": {
@@ -102,7 +101,7 @@ $ npm i -D webpack webpack-cli webpack-dev-server
    	.
        module: {
            rules: [{
-           	test: /\.txt$/,
+           	test: /\.txt$/i,
            	loader: path.resolve('src/text-loader.js')
            }]
        },

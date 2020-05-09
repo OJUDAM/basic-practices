@@ -8,12 +8,15 @@ module.exports = {
     },
     module: {
         rules: [{
-            test: /\.txt$/,
-            loader: path.resolve('src/text-loader.js')
+            test: /\.txt$/i,
+            loader: 'raw-loader'
         },{
-            test: /\.js$/,
+            test: /\.js$/i,
             exclude: /node_modules/,
             loader: 'babel-loader'
+        },{
+            test: /\.css$/i,
+            use: ['style-loader', 'css-loader'],
         }]
     },
     devServer: {

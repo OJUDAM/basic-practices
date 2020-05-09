@@ -61,6 +61,10 @@
 
 [추가 설명]
 
+
+
+
+
 ### 2. 웹팩 실습
 
 ​	다음의 13개의 웹팩 실습을 통해 웹팩의 자세한 설정과 로더와 플러그인 등의 역활과 기능을 이해해 보도록 한다. 13개 실습을 이해하게 되면 큰 복잡한 애플리케이션 빌드와 패키징에 도움이 될 것이다. 
@@ -72,8 +76,8 @@
 #### [실습 03. 웹팩 개발 서버](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02/07/practice03)
 #### [실습 04. 간단한 웹팩 로더 작성](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02/07/practice04)
 #### [실습 05. React 애플리케이션 번들링](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02/07/practice05)
-#### [실습 06. CSS 애셋 번들링](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02/07/practice06)
-#### [실습 07. Image 애셋 번들링](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02/07/practice07)
+#### [실습 06. CSS 번들링](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02/07/practice06)
+#### [실습 07. Image 번들링](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02/07/practice07)
 #### [실습 08. 번들 통합 html5 문서 생성](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02/07/practice08)
 #### [실습 09. 소스맵](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02/07/practice09)
 #### [실습 10. HMR](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02/07/practice10)

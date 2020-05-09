@@ -8,8 +8,12 @@ module.exports = {
     },
     module: {
         rules: [{
-            test: /\.txt$/,
+            test: /\.txt$/i,
             loader: path.resolve('src/text-loader.js')
+        },{
+            test: /\.js$/i,
+            exclude: /node_modules/,
+            loader: 'babel-loader'
         }]
     },
     devServer: {

@@ -10,8 +10,8 @@
 #### 2.1 디렉토리 생성
 
    ```bash
-   $ mkdir project-ex03
-   $ cd project-ex03
+   $ mkdir project-ex01
+   $ cd project-ex01
    ```
 
 #### 2.2 메니페스트 생성
@@ -29,7 +29,7 @@
 
 #### 2-4. 파일 복사 
 
-​	애플리케이션 기능과 내용은 앞의 project-ex02와 같으므로 project-ex02의 public, src 디렉토리 복사한다. project-ex02의 webapck.config.js 도 복사한다.
+​	​	기능과 내용은 pratice02의 project-ex01과 같으므로 pratice02의 project-ex01에 있는 public, src 디렉토리및 webapck.config.js를 복사한다.
 
 #### 2-5. 웹팩 개발 서버 설치
 

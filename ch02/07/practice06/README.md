@@ -52,7 +52,7 @@ $ npm i -D webpack webpack-cli webpack-dev-server @babel/core babel-loader @babe
 
 #### 3-4. 애플리케이션 작성
 
-3. 기능과 내용은 pratice05의 project-ex01과 같으므로 pratice05의 project-ex01에 있는 public, src 디렉토리및 webapck.config.js를 복사한다.
+1. 기능과 내용은 pratice05의 project-ex01과 같으므로 pratice05의 project-ex01에 있는 public, src 디렉토리및 webapck.config.js, babel.config.json를 복사한다.
 
 2. text-loader는 웹팩의 raw-loader로 대체하기 때문에 text-loader.js 는 필요없다. 삭제하도록 한다.
 
@@ -190,118 +190,169 @@ $ npm i -D webpack webpack-cli webpack-dev-server @babel/core babel-loader @babe
 
 ### 4. CSS 모듈
 
-#### 4.1 React 라이브러리 패키지 설치링
+​	JavaScript는 CommonJS및 AMD 프로젝트의 노력과 그리고 ES6의 성과로 모듈 지원을 자체적으로 하기 시작하면서 개발적 측면에서 급속한 발전을 이루어 냈다. 하지만, 웹 애플리케이션 화면을 꾸미는 스타일시트는 여러 파일로 분리는 가능하지만 최종적으로 브라우저에서 하나의 큰 스타일시트로 합쳐져 전역 선언을 그대로 유지할 수 없게끔 작성되어야 했다.
 
-```
-npm i -D react react-dom
-```
+​	 이는 많은 문제점을 가지고 있다. 그 중에 제일 큰 문제점은 중복되는 스타일링 이름이다. 예를 들어 .header 라는 클래스 이름이 외부 CSS 라이브러리에 있고 개발하고 있는 애플리케이션의 스타일시트에도 있으면 충돌이 발생하여 의도한 스타일링이 적용안되는 상황같은 것으로 스타일시트의 유지 관리를 아주 어렵고 복잡하게 만든다.
 
-#### 4.2 리팩토링
+​	 모듈은 명시적으로 선언된 코드의 독립적 단위를 보장하는 방법이다. 모듈간의 의존성을 최적화 도구로 관리하여 로드 순서까지 제어가 가능하게 한다.
 
-1. App.js
+​	 [CSS 모듈 프로젝트](https://github.com/css-modules/css-modules) 는 이러한 모듈의 장점을 CSS에 구현하고자 하는 프로젝트다.  웹팩은 이 프로젝트의 제안을 적극 수용하여 css-loader가 이를 기본적으로 지원하고 있다. 이는 Vue나 React와 같은 컴포넌트 기반의 프로그래밍 모델을 가지고 있는 프레임워크나 라이브러리를 사용하여 화면을 개발할 때 많은 장점을 가질 수 있다. CSS의 클래스 이름을 작성하는 컴포넌트 코드의 로컬 범위로 export하게되어 같은 CSS 클래스 이름의 충돌을 원천적으로 막아 안전하게 사용할 수 있다는 의미다. 실습으로 확인해 보자.          
 
-```jsx
-import React, { Component } from 'react';
-import content from './hello.txt';
+#### 4.1 디렉토리 생성
 
-function App() {
-    return (
-        <h1>{ content.text }</h1>
-    );
-}
+   ```bash
+   $ mkdir project-ex02
+   $ cd project-ex02
+   ```
 
-export default App;
-```
+#### 4.2 메니페스트 생성
 
-​	이전 실습 예제의 App.js와 완전 동일한 React 함수를 작성하였고 React Component를 반환한다. 이전 실습에서 작성한 text-loader로 hello.txt 변환 작업을 해야한다. 코드를 보면 hello.txt안의 text를 이용하는 코드가 있다. ES6과 JSX로 작성된 코드 이며 JSX 코드와 React에 대한 내용은 [react-practices](https://github.com/kickscar-javascript/react-practices) 을 참고 한다.
+   ```bash
+   $ npm init -y
+   ```
 
-2. index.js
+#### 4.3. 패키지 설치
 
-```JSX
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+   ```bash
+$ npm i -D webpack webpack-cli webpack-dev-server @babel/core babel-loader @babel/preset-env @babel/preset-react style-loader css-loader react react-dom
+   ```
 
-ReactDOM.render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>,
-    document.getElementById('root')
-);
-```
+​	txt 처리를 위한 raw-loader 설치를 뺐다. 이 번 실습에서는 사용하지 않는다. 
 
-### 3. 바벨 로더 적용
+#### 4-4. 애플리케이션 작성
 
-​	바벨에 대한 개념 그리고 설정 및 사용 방법을 알고 있으면 바벨 로더 적용은 비교적 쉽다. 내용이 많거나 어렵지 않으니 [ch02 / 03. Babel : 트랜스컴파일러 도구](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02/03) 을 참고해서 이해 하도록 한다.
+1. 앞의 project-ex01과 같으므로 project-ex01에 있는 public, src 디렉토리및 webapck.config.js, babel.config.json를 복사한다.
 
-#### 3.1 바벨 로더 설치
+2. package.json의 "scripts" 내용을 수정한다.
 
-```
-npm i -D @babel/core babel-loader @babel/preset-env @babel/preset-react
-```
+   ```json
+   "scripts": {
+       "start": "node_modules/.bin/webpack-dev-server --progress",
+     	"build": "node_modules/.bin/webpack"
+   }
+   ```
 
-​	코드 변환 기본 기능을 위해 @babel/core 을 설치한다.바벨을 독립 도구로 사용하지 않고 웹팩 로더로 사용할 것이기 때문에 babel-cli 대신, babel-loader를 설치한다. 참고로 babel-loader는 babel 프로젝트에서 나왔기 때문에 @babel 패키지 스코프가 적용되지 않는다.
+3. App.js 수정
 
-​	ES6 트랜스파일링을 위해 @babel/preset-env 프리셋을 설치한다. JSX 트랜스파일링을 위해 @babel/preset-react 프리셋을 설치한다.
+   ```JavaScript
+   import React, { Component, Fragment } from 'react';
+   import styles from './App.css'
+   
+   import Banner01 from "./Banner01";
+   import Banner02 from "./Banner02";
+   
+   export default function App() {
+       return (
+           <Fragment>
+               <Banner01 />
+               <Banner02 />
+           </Fragment>
+       );
+   }
+   ```
 
-#### 3.2 설정
+   기존의 App 화면 출력하던 부분을 컴포넌트 Banner01로  독립 CSS 모듈과 함께 옮길 것이다. 그리고 컴포넌트 Banner02를 작성하는 데 마찬가지로 독립 CSS 모듈을 가지고 있다. 그리고 두 개의 독립 CSS 모듈에는 스타일링은 다르지만 같은 클래스 이름 의 스타일시트가 각각의 컴포넌트에 개별적으로 적용되는지 확인해 볼 것이다.  
 
-1. 로더 설정 : webpack.config.js
+4. App.css
 
-```JavaScript
-	.
-	.
-	.
-    module: {
+   ```css
+   @import 'Common.css';
+   ```
+
+   사실 컴포넌트 App가 바로 Common.css를 import 해도 되지만 Banner01.css 로 옮길 스타일링만 빼고 그대로 유지 시켰다. 애플리케이션 전체 스타일링만 적용할 것이다.
+
+5. Banner01.css
+
+   ```css
+   .Header {
+       width: 180px;
+       text-align: center; 
+       margin:100px auto;
+       padding: 20px;
+       border: 2px solid #999;
+       color: #1144fe;
+       background-color:#c9c1cd;
+   }
+   ```
+
+   css 모듈이 적용된 css 파일이 이전 일반 css 파일과 별반 차이가 없어 보이지만 사실, css 모듈를 위한 다양한 기능을 위한 규칙들로 작성할 수 있다. 자세한 내용은 [webpack css 로더 : modules 문서](https://webpack.js.org/loaders/css-loader/#modules) 를 참조 한다.
+
+6. Banner01.js 
+
+   ```JavaScript
+   import React, { Component } from 'react';
+   import styles from './Banner01.css';
+   
+   export default function Banner01() {
+       return (
+           <h1 className={ styles.Header }>Hello React</h1>
+       );
+   }
+   ```
+
+    css 모듈을 사용하기 때문에 styles라는 변수로 import 하였다. styles 변수로 클래스 이름에 접근한다.
+
+7. Banner02.css
+
+   ```css
+   .Header{
+       font-size: 0.75em;
+       width: 180px;
+       text-align: center;
+       margin:10px auto;
+       padding: 20px;
+       border: 2px solid #999;
+       color: #fe4411;
+       background-color:#c9c1cd
+   }
+   ```
+
+   Banner01.css 와 같은 클래스이름의 스타일시트다. 스타일링 내용은 다르다.
+
+8. Banner02.js
+
+   ```JavaScript
+   import React, { Component } from 'react';
+   import styles from './Banner02.css';
+   
+   export default function Banner02() {
+       return (
+           <h1 className={ styles.Header }>Hello CSS Module</h1>
+       );
+   }
+   ```
+
+   컴포넌트의 화면 텍스트와 적용 CSS 모듈만 빼고 Banner01과 완전 동일하다.
+
+#### 4-5. css-loader 옵션 설정
+
+​	css-loder의 옵션 중에 modules 옵션을 true로 설정하면 된다. 기본은 false 이다.
+
+```javascript
+   module: {
         rules: [{
-            test: /\.txt$/,
-            loader: path.resolve('src/text-loader.js')
-        },{
-            test: /\.js$/,
-            exclude: /node_modules/,
-            loader: 'babel-loader'
+            test: /\.css$/i,
+            use: [{
+                loader: 'style-loader'
+            },{ 
+                loader:'css-loader',
+                options: {
+                    modules: true
+                }
+            }]
         }]
     },
-	.
-	.
-	.
 ```
 
-​	이전 실습에서 작성하였던 text-loader 설정을 그대로 유지하였다.  바벨 로더 설정을 보면, React 코드가 작성된 js 파일을 대상으로 하였다. 그리고 패키지가 설치된 node_modules의 js 파일들은 제외하였다. text-loader와는 다르게 babel-loader는 npm 패키지로 설치 되었기 때문에 소스 파일의 경로가 필요없고 이름만 설정하면 된다.
+​	raw-loader 설정을 뺐다. 이 전의 스타일시트 로더 설정 `['style-loader', 'css-loader']`  는 기본 옵션으로 두 개의 로더를 설정했다. 하지만 이 실습에서는 CSS 모듈 지원을 위해 css-loader의 옵션 설정을 해야 한다. 이를 위해서는 `{ }` 안에 로더 설정을 해야한다. style-loader는 설정할 옵션이 없지만 css-load와 같은 모습으로 설정하였다.
 
-2. 바벨 설정 : babel.config.json
+#### 4-6. 개발 서버 실행
 
-```json
-{
-    "presets": [["@babel/env", {
-        "targets": {
-            "ie": "11",
-            "edge": "80",
-            "firefox": "73",
-            "chrome": "82",
-            "opera": "69",
-            "safari": "13"
-        }
-    }], "@babel/preset-react"]
-}
-```
+​	`npm start` 명령으로 webpack 개발 서버를 실행하고 브라우저에서 확인해 보면 두 CSS 파일이 같은 클래스 이름의 다른 스타일링이 적용되었지만 컴포넌트별로 개별적으로 적용되어 있음을 알 수 있다.
 
-​	외부에 설정한 바벨 설정 내용이다. 보통, 바벨 설정에서는 변환 규칙을 위해 프리셋과 플러그인 설정을 하게 된다. ES6 변환을 위한 @babel/env 프리셋과 React 변환을 위해 @babel/preset-react 프리셋 설정을 하였다. @babel/preset-react 프리셋은 기본 변환 규칙을 설정하였다.
+<img src="http://image.kickscar.me:8080/markdown/javascript-practices/ch02-0732.png" />
 
-​	@babel/env 는 타겟 브라우저들의 버전 설정으로 세세한 변환 규칙을 대신할 수 있다. 이렇게 하면 세세하게 문법 변환 규칙들을 설정을 하지 않아도 자동으로 변환 규칙들이 한 번에 적용되는 최근에 나온 preset-es2015를 대체하는 편리한 env 프리셋 기능이다.
 
-### 4. 빌드 하기
 
-   `npm run build` 명령으로 빌드해 보자
+### 5. CSS 프로세서
 
-<img src="http://image.kickscar.me:8080/markdown/javascript-practices/ch02-0728.png" />
-
-​	정상적으로 빌드가 되었다. 번들링된 번들 bundle.js 를 열어 보면 react와 관련된 주석과 코드들이 많이 보일 것이다.  
-
-### 5. 개발 서버 실행
-
-   `npm start` 명령어로 개발 서버를 실행해 보자.
-
-   <img src="http://image.kickscar.me:8080/markdown/javascript-practices/ch02-0717.png" />
-
-​	hello.txt 의 내용을 수정해보고 바로 브라우저에 반영 되는가 확인해 보자. 그리고  App.js 에서 React 컴포넌트 JSX코드에서 &lt;h1&gt; 를 &lt;h5&gt; 또는 다른 태그로 수정하고 바로 브라우저에 반영 되는가 확인해 보자.

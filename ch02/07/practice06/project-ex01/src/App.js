@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import content from './hello.txt';
-import './App.css'
+import './App.css';
 
 function App() {
     return (

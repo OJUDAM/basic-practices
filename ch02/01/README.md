@@ -16,7 +16,7 @@
      - 로컬 설치가 된 패키지의 실행 스크립트는  ./node_module/... 이런 형태로 실행 스크립트을 node로 실행해야 하지만 npx와 실행스크립트 이름으로만 실행할 수 있다.
 
 
-#### 1-2. 설치(on mac)
+#### 1-2. 설치(mac or linux)
 1. 설치된 Node 완전 제거하기
 
     ```bash
@@ -42,7 +42,8 @@
 
     ```bash
     $ curl https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
-    $ source ~/.profile
+    $ source ~/.profile (mac)
+    $ source ~/.bashrc  (centos)
     $ nvm --version
     0.33.8
     $ 

@@ -2,9 +2,9 @@
 
 ### 1. ECMAScript 표준 명세
 
-​	ECMAScript와 JavaScript 관계는 다분히 공학분야의 학술적 관계다. 기술적으로는 ECMAScript 표준 명세의 규칙, 지침대로 구현된 구현체 중 하나로  JavaScript를 보는 것이 맞다.  구현체의 의미는 다음과 같다.
+​	ECMAScript와 JavaScript 관계는 다분히 공학분야의 학술적 관계다. 기술적으로는 ECMAScript 표준 명세의 규칙과 지침대로 구현된 구현체 중 하나로  JavaScript를 보는 것이 맞다. 구현체의 의미는 다음과 같다.
 
-1. 구현된 스크립트 언어의 문법 체계로 코드가 작성되어야 한다.
+1. 구현된 스크립트 언어의 문법 체계로 프로그래밍 코드 작성이 가능해야 한다.
 2. 작성된 코드는 스크립트 엔진(인터프리터)을 통해 실행되어야 한다.
 
 ​	앞의 [JavaScript 타임라인](https://github.com/kickscar-javascript/basic-practices/tree/master/ch01/01) 에서 본 것처럼 ECMAScript 표준 명세의 구현체는 JavaScript만 있었던 것은 아니였다.
@@ -23,7 +23,7 @@
 
 #### 2-3. JavaScript 
 
-​	앞의 ECMAScript 구현체들의 기술 상황과 현재의 시장 상황 등을 고려해보면 ECMAScript 표준 명세 구현체는  JavaScript 밖에 없다.  따라서 JavaScript와 ECMAScript는 같은 것이라 생각해도 큰 무리는 없다. JavaScript 엔진은 그 종류가 많다.
+​	앞의 ECMAScript 구현체들의 기술 상황과 현재의 시장 상황 등을 고려해보면 ECMAScript 표준 명세 구현체는  JavaScript 밖에 없다.  따라서 JavaScript와 ECMAScript는 같은 것이라 생각해도 큰 무리는 없다. JavaScript 엔진은 그 종류가 상당히 많다.
 
 1. [**SpiderMonkey**](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey)
    - 최초의 JavaScript 엔진 
@@ -56,9 +56,9 @@
 
 #### 3-1. 정의
 
-​	ECMAScript2015(ES6) 이전의 ECMAScript 표준 명세 구현체인  JavaScript의 언어적 결함, 데이터 타입의 모호함 등의 여러 이유로 개발된 JavaScript 파생 스크립트 언어들을 가리킨다.
+​	ECMAScript2015(ES6) 이전, 표준 명세 구현체  JavaScript의 언어적 결함, 데이터 타입의 모호함 등의 여러 이유로 개발된 JavaScript 파생 스크립트 언어들을 가리킨다.
 
-​	JavaScript 방언쯤 되는 파생 스크립트 언어라 볼 수 있지만 ECMAScript 구현체라고는 볼 수 없다. 그 이유는 이 비표준 스크립트 언어로 작성된 코드를 실행하는 엔진은 대부분 JavaScript 엔진이다. 직접 실행할 수 있는 엔진이 존재하지 않기 때문이다. 따라서, 대부분 컴파일러(트랜스컴파일러 또는 트랜스파일러)을 통해  JavaScript 코드로 변환되어 실행된다.
+​	JavaScript 방언쯤 되는 파생 스크립트 언어라 볼 수 있지만 ECMAScript 구현체라고는 볼 수 없다. 그 이유는 이 비표준 스크립트 언어로 작성된 코드를 실행하는 엔진은 대부분 JavaScript 엔진으로 직접 실행할 수 있는 엔진이 존재하지 않기 때문이다. 따라서, 대부분 컴파일러(트랜스컴파일러 또는 트랜스파일러)을 통해  JavaScript 코드로 변환되어 JavaScript 엔진에서 실행된다.
 
 #### 3-2. 종류
 

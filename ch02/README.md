@@ -31,7 +31,11 @@
 <br/>
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-{ "[08](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02/08)": "[IDE 통합및 설정](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02/08)" }
+{ "[08](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02/08)": "[Mocha : 단위 테스트 도구](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02/08)" }
+<br/>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+{ "[09](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02/08)": "[IDE 통합및 설정](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02/09)" }
 <br/>
 
 ]

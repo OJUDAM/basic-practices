@@ -142,9 +142,9 @@ $ npx mocha --version
    }
    ```
 
-   ​	Mocha를 사용한 테스트 코드가 아니고 assert 모듈만을 사용해서 테스트 코드를 작성하였다.  try~catch 구문을 사용해서 테스트 코드를 작성할 수 있지만 실습1의 Mocha의 테스트 케이스가 try~catch를 랩핑하고 있음을 대략 짐작할 수 있다.
+   ​	Mocha를 사용한 테스트 코드가 아니고 assert 모듈만을 사용해서 테스트 코드를 작성하였다.  try-catch 구문을 사용해서 테스트 코드를 작성할 수 있지만 실습1의 Mocha의 테스트 케이스가 try-catch를 랩핑하고 있음을 대략 짐작할 수 있다.
 
-   ​	node assert 모듈로 assertion을 할 때는 Legacy Mode와 Strict Mode를 구분해야 한다. Strict Mode로 테스트가 이루어져야 하는 것이 당연해 보인다. 왜냐하면 문제가 발생할 수 있는 코드가 Legacy 모드 테스트 에서는 assert되지 않을 가능성이 있다.
+   ​	node assert 모듈로 assertion을 할 때는 Legacy Mode와 Strict Mode를 구분해야 한다. Strict Mode로 테스트가 이루어져야 하는 것이 당연해 보인다. 왜냐하면 문제가 발생할 수 있는 코드가 Legacy 모드 테스트 에서는 assert되지 않을 가능성이 있기 때문이다.
 
    ​	예제에서 보면 strictEqual은 30 === '30', equal은 30 == '30' 비교를 하는 것을 알 수 있다. 기본 타입에서는 타입과 값의 동일성을 비교하고 객체에서는 동일성을 비교한다. 기본 타입의 동일성 비교를 한다면 Strict Mode 테스트가 혼동을 피할 수 있다. 그래서 다음 4개의 Legacy Mode의 assert 함수들은 deprecated 되어 있다. 참고로 객체에서는 strictEqual은 두 객체의 동일성 비교를 한다. 객체의 구조 비교 즉, 동질성은 strictDeepEqual을 사용한다.
 

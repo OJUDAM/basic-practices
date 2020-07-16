@@ -465,7 +465,7 @@ $ npm i -D webpack webpack-cli webpack-dev-server @babel/core babel-loader @babe
    
    function App() {
        return (
-           <h1 className='Header'>Hello World</h1>
+           <h1 className='Header'>Hello React</h1>
        );
    }
    
@@ -519,5 +519,5 @@ module: {
 
 ### 6. CSS 프로세서 (PostCSS)
 
-​	최근의 CSS 프로세스 추세는 PostCSS를 이용해서 더 유연한 CSS 워크플로우를 구현한다. CSS 변환 도구인 PostCSS는 CSS에 다양한 변환을 적용하는 개별 플러그인을 적용할 수 있다. Autoprefixer + CSS 모듈은 React나 Vue 기반 애플리케이션 개발의  강력한 조합으로 많이 활용되고 있다.    
+​	최근의 CSS 프로세스 추세는 PostCSS를 이용해서 더 유연한 CSS 워크플로우를 구현한다. CSS 변환 도구인 PostCSS는 CSS에 다양한 변환을 적용하는 개별 플러그인을 적용할 수 있다. React나 Vue 기반 애플리케이션 개발에서 Autoprefixer + CSS모듈은 강력한 조합으로 많이 활용되고 있다.    
 

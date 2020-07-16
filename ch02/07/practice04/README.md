@@ -81,9 +81,9 @@ $ npm i -D webpack webpack-cli webpack-dev-server
 - require
 - url
 
-​	index.js 를 보면 App.js를 import한다. 따라서 App.js는 의존성 트리에 추가되고 전처리 대상이 된다. App.js를 보면 hello.txt를 require로 로딩하기 때문에 hello.txt도 의존성 트리에 추가되고 전처리 대상이 된다. 그런데 사실, 아직 전처리를 위한 로더를 설정하지 않았기 때문에 아직 전처리 대상은 없다.
+​	index.js 를 보면 App.js를 import한다. 따라서 App.js는 의존성 트리에 추가되고 전처리 대상이 된다. App.js를 보면 hello.txt를 require로 로딩하기 때문에 hello.txt도 의존성 트리에 추가되고 전처리 대상이 된다. 그런데 사실 아직 전처리를 위한 로더를 설정하지 않았기 때문에 아직 전처리 대상은 없다.
 
-​	웹팩이 엔트리 포인트 index.js를 시작으로 의존성 트리를 빌드하고 전처리 대상을 탐색 한다는 것을 언급한 것이고 만일, 해당 파일에 대한 전처리 로더가 설정되어 있다면 전처리가 이루어 졌을 것이다. 그러면 확장자 txt 파일의 전처리를 위한 text-loader를 설정해 보자.  
+​	웹팩이 엔트리 포인트 index.js를 시작으로 의존성 트리를 빌드하고 전처리 대상을 탐색 한다는 것을 언급한 것이고 만일 해당 파일에 대한 전처리 로더가 설정되어 있다면 전처리가 이루어 졌을 것이다. 그러면 확장자 txt 파일의 전처리를 위한 text-loader를 설정해 보자.  
 
 ### 6. text 파일 추가 : hello.txt
 

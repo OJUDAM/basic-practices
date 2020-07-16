@@ -3,9 +3,7 @@
 ### 1. 다양한 종류의 애셋 번들링
 ​	웹팩의 아주 특별난 특징 중에 하나는 JavaScript 뿐만 아니라 모든 종류의 파일들을 모듈로 취급한다는 것이다. [실습04. 간단한 웹펙 로더 작성](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02/07/practice04) 은 애플리케리션에서 외부 txt 파일의 내용을 import하는 간단한 텍스트 로더를 직접 작성해 보는 실습 이었다.
 
-​	웹팩은 다양한 애셋에 대한 로더([웹팩 지원 로더](https://webpack.js.org/loaders/) 참고)들을 제공하고 있다. 직접 작성한 text-loader도 사실은 웹팩의 Files 로더 중 raw-loader 로 이미 지원하고 있었다.  JSON, Styling, Template, Image, Framework(VueJS의 컴포넌트 파일 .vue와 같은)뿐만 아니라 3rd 파티 로더까지 포함하면 모든 종류의 외부 애셋 파일에 대한 로딩및 처리가 가능하다.
-
-
+​	웹팩은 다양한 애셋에 대한 로더([웹팩 지원 로더](https://webpack.js.org/loaders/) 참고)들을 제공하고 있다. 직접 작성한 text-loader도 사실은 웹팩의 Files 로더 중 raw-loader 로 이미 지원하고 있었다.  JSON, Styling, Template, Image, Framework(VueJS의 컴포넌트 파일 .vue와 같은)뿐만 아니라 3rd 파티 로더까지 포함하면 모든 종류의 외부 에셋 파일에 대한 로딩 및 처리가 가능하다.
 
 ### 2. 스타일시트
 
@@ -25,20 +23,20 @@
 
 ​	실습 애플리케이션에 적용한 스타일시트를 번들링한다. 그리고 직접 작성한 text-loader도 웹팩 raw-loader로 교체한다.
 
-#### 3.1 디렉토리 생성
+#### 3-1 디렉토리 생성
 
    ```bash
    $ mkdir project-ex01
    $ cd project-ex01
    ```
 
-#### 3.2 메니페스트 생성
+#### 3-2 메니페스트 생성
 
    ```bash
    $ npm init -y
    ```
 
-#### 3.3. 패키지 설치
+#### 3-3. 패키지 설치
 
    ```bash
 $ npm i -D webpack webpack-cli webpack-dev-server @babel/core babel-loader @babel/preset-env @babel/preset-react style-loader css-loader raw-loader react react-dom
@@ -198,20 +196,20 @@ $ npm i -D webpack webpack-cli webpack-dev-server @babel/core babel-loader @babe
 
 ​	 [CSS 모듈 프로젝트](https://github.com/css-modules/css-modules) 는 이러한 모듈의 장점을 CSS에 구현하고자 하는 프로젝트다.  웹팩은 이 프로젝트의 제안을 적극 수용하여 css-loader가 이를 기본적으로 지원하고 있다. 이는 Vue나 React와 같은 컴포넌트 기반의 프로그래밍 모델을 가지고 있는 프레임워크나 라이브러리를 화면 개발에 사용할 때 많은 장점이 있다. CSS의 클래스 이름을 작성하는 컴포넌트 코드의 로컬 범위로만 export 할 수 있다. 이렇게 하면 같은 CSS 클래스 이름의 충돌을 원천적으로 막아 안전하게 사용할 수 있게 된다. 실습으로 확인해 보자.          
 
-#### 4.1 디렉토리 생성
+#### 4-1 디렉토리 생성
 
    ```bash
    $ mkdir project-ex02
    $ cd project-ex02
    ```
 
-#### 4.2 메니페스트 생성
+#### 4-2 메니페스트 생성
 
    ```bash
    $ npm init -y
    ```
 
-#### 4.3. 패키지 설치
+#### 4-3. 패키지 설치
 
    ```bash
 $ npm i -D webpack webpack-cli webpack-dev-server @babel/core babel-loader @babel/preset-env @babel/preset-react style-loader css-loader react react-dom
@@ -344,7 +342,7 @@ $ npm i -D webpack webpack-cli webpack-dev-server @babel/core babel-loader @babe
     },
 ```
 
-​	raw-loader 설정을 뺐다. 이 전의 스타일시트 로더 설정 `['style-loader', 'css-loader']`  는 기본 옵션으로 두 개의 로더를 설정한 것이다. 이 실습에서는 CSS 모듈 지원을 위해 css-loader의 옵션 설정을 해야 한다. 이를 위해서는 `{ }` 안에 로더 설정을 해야한다. style-loader는 설정할 옵션이 없지만 css-load와 동일한 형식으로 설정하였다.
+​	raw-loader 설정을 뺐다. 이 전의 스타일시트 로더 설정 `['style-loader', 'css-loader']`  는 기본 옵션으로 두 개의 로더를 설정한 것이다. 이 실습에서는 CSS 모듈 지원을 위해 css-loader의 옵션 설정을 해야 한다. 이를 위해서는 `{ }` 안에 로더 설정을 해야한다. style-loader는 설정할 options섹션이 없지만 css-loader와 동일한 형식으로 설정하였다.
 
 #### 4-6. 개발 서버 실행
 
@@ -354,7 +352,172 @@ $ npm i -D webpack webpack-cli webpack-dev-server @babel/core babel-loader @babe
 
 
 
-### 5. CSS 프로세서
+### 5. CSS 프로세서 (SASS)
 
-sass, less ...  css 관련 디테일은 어디서 다루나.... 음...
+​	sass, less 같은 CSS 전처리기는 CSS포맷을 확장하여 CSS에는 없는 변수, 중첩, 믹스인, 상속 등의 개념을 적용한 CSS를 작성하게 해준다. 하지만 브라우저는 sass, less 문법을 이해하지 못하기 때문에 CSS 프로세스를 통해 브라우저가 이해하는 CSS로 변환 작업을 해야 한다. 마치 JSX를 JavaScript코드로 트랜스파일링하는 것과 유사하다. webpack은 CSS loader와 별도로 CSS 전처리기를 위한 loader를 지원하고 있다. 여기서는 sass loader를 실습해 보도록 하자.
+
+#### 5-1. 디렉토리 생성
+
+   ```bash
+   $ mkdir project-ex03
+   $ cd project-ex03
+   ```
+
+#### 5-2. 메니페스트 생성
+
+   ```bash
+   $ npm init -y
+   ```
+
+#### 5-3. 패키지 설치
+
+   ```bash
+$ npm i -D webpack webpack-cli webpack-dev-server @babel/core babel-loader @babel/preset-env @babel/preset-react node-sass style-loader css-loader sass-loader react react-dom
+   ```
+
+1. **웹팩 패키지** : webpack webpack-cli webpack-dev-server
+2. **babel 패키지** : @babel/core babel-loader @babel/preset-env @babel/preset-react
+3. **스타일시트 패키지** : style-loader css-loader sass-loader, node-sass
+4. **react 라이브러리 패키지** : react, react-dom
+
+#### 5-4. 애플리케이션 작성
+
+1. 앞의 project-ex01과 같으므로 project-ex01에 있는 public, src 디렉토리및 webapck.config.js, babel.config.json를 복사한다.
+
+2. package.json의 "scripts" 내용을 수정한다.
+
+   ```json
+   "scripts": {
+     "start": "node_modules/.bin/webpack-dev-server --progress",
+     "build": "node_modules/.bin/webpack"
+   }
+   ```
+
+3. 스타일링 sass 적용
+
+   - _variables.scss
+
+     ```scss
+     // Global Settings
+     $text-align-center: center;
+     $text-align-left: left;
+     $text-align-right: right;
+     
+     // Body Font
+     $font-family-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+     
+     // Background
+     $bg-body: #dfdf99;
+     $bg-header: #cdc1ce;
+     
+     // Header
+     $header-width: 180px;
+     $header-margin: 100px auto;
+     $header-padding: 20px 20px 20px 20px;
+     $header-color: #1144fe;
+     $header-border: 2px solid #999
+     ```
+
+     ​	스타일링 변수들을 지정했다.
+
+   - App.scss
+
+     ```scss
+     //
+     // App.scss
+     //
+     @import "variables";
+     
+     *, *:before, *:after {
+       margin: 0;
+       padding: 0;
+       box-sizing: inherit
+     }
+     
+     html {
+       box-sizing: border-box;
+     
+       body {
+         margin: 0;
+         font-family: $font-family-body;
+         background-color: $bg-body;
+     
+         .Header{
+           width: $header-width;
+           text-align: $text-align-center;
+           margin: $header-margin;
+           padding: $header-padding;
+           border: $header-border;
+           color: $header-color;
+           background-color: $bg-header
+         }
+       }
+     }
+     ```
+
+     ​	project-ex01의 Common.css와 App.css를 App.scss 로 다시 작성하였다. 
+
+4. App.js 수정
+
+   ```javascript
+   import React, { Component } from 'react';
+   import './App.scss';
+   
+   function App() {
+       return (
+           <h1 className='Header'>Hello World</h1>
+       );
+   }
+   
+   export default App;
+   ```
+
+   수정된 부분은 text 처리를 위한 raw-loader를 사용하지 않을 것이기 때문에 `h1` 안에 텍스트 Hello World 리터럴로 변경하였고 App.scss를 import 했다.
+
+#### 5-5. sass 로더 설정
+
+​	webpack.config.js 에서 sass 로더를 설정한다.
+
+```JavaScript
+	.
+	.
+	.
+module: {
+        rules: [{
+            test: /\.js$/i,
+            exclude: /node_modules/,
+            loader: 'babel-loader'
+        }, {
+            test: /\.css$/i,
+            loader: [{
+                loader: 'style-loader'
+            }, {
+                loader: 'css-loader',
+                options: {
+                    modules: true
+                }
+            }]
+        }, {
+            test: /\.s[ac]ss$/i,
+            use: [
+                'style-loader',
+                'css-loader',
+                'sass-loader'
+            ]
+        }]
+    }
+	.
+	.
+	.
+```
+
+​	이 예제에서는 CSS 파일 처리를 위한 style-loader와 css-loader 설정이 필요하지 않지만 보통 프로젝트에서는 css와 sass 함께 처리하는 경우가 많다. 따라서 아래 sass loader 설정과 보통은 함께 한다.
+
+#### 5-6. 개발 서버 실행
+
+​	`npm start` 명령으로 webpack 개발 서버를 실행하고 브라우저에서 확인해 보면 project-ex01과 동일한 화면의 애플리케이션이 동작되는 것을 확인할 수 있다.
+
+### 6. CSS 프로세서 (PostCSS)
+
+​	최근의 CSS 프로세스 추세는 PostCSS를 이용해서 더 유연한 CSS 워크플로우를 구현한다. CSS 변환 도구인 PostCSS는 CSS에 다양한 변환을 적용하는 개별 플러그인을 적용할 수 있다. Autoprefixer + CSS 모듈은 React나 Vue 기반 애플리케이션 개발의  강력한 조합으로 많이 활용되고 있다.    
 

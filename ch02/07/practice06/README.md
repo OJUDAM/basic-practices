@@ -3,7 +3,9 @@
 ### 1. 다양한 종류의 애셋 번들링
 ​	웹팩의 아주 특별난 특징 중에 하나는 JavaScript 뿐만 아니라 모든 종류의 파일들을 모듈로 취급한다는 것이다. [실습04. 간단한 웹펙 로더 작성](https://github.com/kickscar-javascript/basic-practices/tree/master/ch02/07/practice04) 은 애플리케리션에서 외부 txt 파일의 내용을 import하는 간단한 텍스트 로더를 직접 작성해 보는 실습 이었다.
 
-​	웹팩은 다양한 애셋에 대한 로더([웹팩 지원 로더](https://webpack.js.org/loaders/) 참고)들을 제공하고 있다. 직접 작성한 text-loader도 사실은 웹팩의 Files 로더 중 raw-loader 로 이미 지원하고 있었다.  JSON, Styling, Template, Image, Framework(VueJS의 컴포넌트 파일 .vue와 같은)뿐만 아니라 3rd 파티 로더까지 포함하면 모든 종류의 외부 에셋 파일에 대한 로딩 및 처리가 가능하다.
+​	웹팩은 다양한 애셋에 대한 로더([웹팩 지원 로더](https://webpack.js.org/loaders/) 참고)들을 제공하고 있다. 직접 작성한 text-loader도 사실은 웹팩의 Files 로더 중 raw-loader 로 이미 지원하고 있었다.  json, css, image, template, framework(VueJS의 컴포넌트 파일 .vue와 같은)뿐만 아니라 3rd 파티 로더까지 포함하면 모든 종류의 외부 에셋 파일에 대한 로딩 및 처리가 가능하다.
+
+​	실습06 에서는 css 로더와 번들링에 대해 알아보고 다음 실습07 에서는 image에 대해 알아보도록 한다.
 
 ### 2. 스타일시트
 
@@ -15,13 +17,13 @@
 
 2. **style-loader**
 
-   유효하다고 분석된 모든 스타일링 규칙을 JavaScript 코드로 변경한다.
+   분석된 유효한 모든 스타일링 규칙을 문서내 `<style>`에 CSS로 변경한다.
    
    
 
 ### 3. CSS 파일 번들링 하기
 
-​	실습 애플리케이션에 적용한 스타일시트를 번들링한다. 그리고 직접 작성한 text-loader도 웹팩 raw-loader로 교체한다.
+​	실습 애플리케이션에 적용한 스타일시트를 번들링한다. 앞의 실습에서 직접 작성한 text-loader도 Webpack 공식 로더 raw-loader로 교체한다.
 
 #### 3-1 디렉토리 생성
 
@@ -45,14 +47,14 @@ $ npm i -D webpack webpack-cli webpack-dev-server @babel/core babel-loader @babe
 1. **웹팩 패키지** : webpack webpack-cli webpack-dev-server
 2. **babel 패키지** : @babel/core babel-loader @babel/preset-env @babel/preset-react
 3. **스타일시트 패키지** : style-loader css-loader
-4. **텍스트 파일 처리** : raw-loader(text-loader를 웹팩 raw-loader로 교체)
+4. **텍스트 파일 처리** : raw-loader(text-loader 교체)
 5. **react 라이브러리 패키지** : react, react-dom
 
 #### 3-4. 애플리케이션 작성
 
 1. 기능과 내용은 pratice05의 project-ex01과 같으므로 pratice05의 project-ex01에 있는 public, src 디렉토리및 webapck.config.js, babel.config.json를 복사한다.
 
-2. text-loader는 웹팩의 raw-loader로 대체하기 때문에 text-loader.js 는 필요없다. 삭제하도록 한다.
+2. text-loader는 웹팩의 raw-loader로 대체하기 때문에 text-loader.js 는 필요없기 때문에 삭제한다.
 
 3. package.json의 "scripts" 내용을 수정한다.
 
@@ -121,7 +123,7 @@ $ npm i -D webpack webpack-cli webpack-dev-server @babel/core babel-loader @babe
 	.
 ```
 
-​	text-loader 를 raw-loader로 변경하였다. CSS 파일 처리를 위한 style-loader와 css-loader 설정을 추가 하였다. babel preset 설정을 위한 babel.confiog.json 는 변경없이 사용하면 된다.
+​	text-loader 를 raw-loader로 변경하였다. CSS 파일 처리를 위한 style-loader와 css-loader 설정을 추가 하였다. babel preset 설정을 위한 babel.confiog.json 는 변경없이 사용한다.
 
 #### 3-6. 개발 서버 실행
 
@@ -190,9 +192,7 @@ $ npm i -D webpack webpack-cli webpack-dev-server @babel/core babel-loader @babe
 
 ​	JavaScript는 CommonJS및 AMD 프로젝트의 노력과 ES6의 성과로 모듈 지원을 자체적으로 하기 시작하면서 JavaScript 관련 개발이 급속히 발전했다. 하지만, 웹 애플리케이션의 화면을 꾸미는 스타일시트는 여러 파일로 분리는 가능하지만 최종적으로 브라우저에서 하나의 큰 스타일시트로 합쳐져 전역 선언을 그대로 유지할 수 밖에 없게끔 작성되어야 했다.
 
-​	 이는 많은 문제점을 가지고 있다. 그 중에 제일 큰 문제점은 중복되는 스타일링 이름이다. 예를 들어 .header 라는 클래스 이름이 외부 CSS 라이브러리에 있고 개발하고 있는 애플리케이션의 스타일시트에도 있다면 충돌이 발생하여 의도한 스타일링이 적용안되는 상황이 발생한다. 이는 스타일시트의 유지 관리를 아주 어렵고 복잡하게 만든다.
-
-​	 모듈은 명시적으로 선언된 코드의 독립적 단위를 보장하는 방법이다. 모듈간의 의존성을 최적화 도구로 관리하여 로드 순서까지 제어가 가능하게 한다.
+​	 이는 많은 문제점을 가지고 있다. 그 중에 제일 큰 문제점은 중복되는 스타일링 이름이다. 예를 들어 .header 라는 클래스 이름이 외부 CSS 라이브러리에 있고 개발하고 있는 애플리케이션의 스타일시트에도 있다면 충돌이 발생하여 의도한 스타일링이 적용안되는 상황이 발생한다. 이는 스타일시트의 유지 관리를 아주 어렵고 복잡하게 만든다. 모듈은 명시적으로 선언된 코드의 독립적 단위를 보장하는 방법이다. 모듈간의 의존성을 최적화 도구로 관리하여 로드 순서까지 제어가 가능하게 한다.
 
 ​	 [CSS 모듈 프로젝트](https://github.com/css-modules/css-modules) 는 이러한 모듈의 장점을 CSS에 구현하고자 하는 프로젝트다.  웹팩은 이 프로젝트의 제안을 적극 수용하여 css-loader가 이를 기본적으로 지원하고 있다. 이는 Vue나 React와 같은 컴포넌트 기반의 프로그래밍 모델을 가지고 있는 프레임워크나 라이브러리를 화면 개발에 사용할 때 많은 장점이 있다. CSS의 클래스 이름을 작성하는 컴포넌트 코드의 로컬 범위로만 export 할 수 있다. 이렇게 하면 같은 CSS 클래스 이름의 충돌을 원천적으로 막아 안전하게 사용할 수 있게 된다. 실습으로 확인해 보자.          
 
@@ -354,7 +354,7 @@ $ npm i -D webpack webpack-cli webpack-dev-server @babel/core babel-loader @babe
 
 ### 5. CSS 프로세서 (SASS)
 
-​	sass, less 같은 CSS 전처리기는 CSS포맷을 확장하여 CSS에는 없는 변수, 중첩, 믹스인, 상속 등의 개념을 적용한 CSS를 작성하게 해준다. 하지만 브라우저는 sass, less 문법을 이해하지 못하기 때문에 CSS 프로세스를 통해 브라우저가 이해하는 CSS로 변환 작업을 해야 한다. 마치 JSX를 JavaScript코드로 트랜스파일링하는 것과 유사하다. webpack은 CSS loader와 별도로 CSS 전처리기를 위한 loader를 지원하고 있다. 여기서는 sass loader를 실습해 보도록 하자.
+​	sass, less 같은 CSS 전처리기는 CSS포맷을 확장하여 CSS에는 없는 변수, 중첩, 믹스인, 상속 등의 개념을 적용한 CSS를 작성하게 해준다. 하지만 브라우저는 sass, less 문법을 이해하지 못하기 때문에 CSS 프로세서를 통해 브라우저가 이해하는 CSS로 변환 작업을 해야 한다. 마치 JSX를 JavaScript코드로 트랜스파일링하는 것과 유사하다. webpack은 CSS loader와 별도로 CSS 전처리기를 위한 loader를 지원하고 있다. 여기서는 sass loader를 실습해 보도록 하자.
 
 #### 5-1. 디렉토리 생성
 
@@ -393,7 +393,7 @@ $ npm i -D webpack webpack-cli webpack-dev-server @babel/core babel-loader @babe
    }
    ```
 
-3. 스타일링 sass 적용
+3. 스타일링 sass(scss) 적용
 
    - _variables.scss
 

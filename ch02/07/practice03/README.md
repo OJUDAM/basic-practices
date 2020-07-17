@@ -116,7 +116,7 @@ export default function(){
 
 ```json
 {
-  "name": "project-ex03",
+  "name": "project-ex01",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
